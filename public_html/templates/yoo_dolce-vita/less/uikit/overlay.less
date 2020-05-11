@@ -1,0 +1,47 @@
+// Copyright (C) YOOtheme GmbH, YOOtheme Proprietary Use License (http://www.yootheme.com/license) */
+
+//
+// Component: Overlay
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+@overlay-panel-padding:                         @global-padding;
+@overlay-panel-background:                      fade(@global-secondary-active-background, 90%);
+@overlay-panel-color:                           @global-secondary-highlight-color;
+
+@overlay-icon:                                  "\e114";
+@overlay-icon-size:                             24px;
+@overlay-icon-color:                            @global-secondary-highlight-color;
+
+
+// Sub-object `uk-overlay-panel`
+// ========================================================================
+
+.hook-overlay-panel() {}
+
+
+// Sub-object `uk-overlay-background`
+// ========================================================================
+
+.hook-overlay-background() {}
+
+
+// Sub-object `uk-overlay-icon`
+// ========================================================================
+
+.hook-overlay-icon() { font-family: @global-theme-icon-font-family; }
+
+
+// Miscellaneous
+// ========================================================================
+
+.hook-overlay-misc() {
+
+    // Color for headlines
+    .uk-panel:not(.uk-panel-box)  .uk-overlay-panel > div > .uk-panel-title { color: @overlay-panel-color; }
+
+}

@@ -1,0 +1,112 @@
+// Copyright (C) YOOtheme GmbH, YOOtheme Proprietary Use License (http://www.yootheme.com/license) */
+
+//
+// Component: Comment
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+@comment-header-margin-bottom:                  @global-margin;
+
+@comment-avatar-margin-right:                   @global-margin;
+
+@comment-title-font-size:                       22px;
+@comment-title-line-height:                     27px;
+
+@comment-meta-color:                            @global-muted-color;
+@comment-meta-font-size:                        @global-ui-font-size;
+@comment-meta-line-height:                      14px;
+
+@comment-list-margin-top:                       @global-margin;
+
+//
+// New
+//
+
+@comment-padding:                               @global-padding;
+@comment-border-width:                          @global-border-width;
+@comment-border:                                @global-border;
+@comment-border-radius:                         @global-border-radius;
+@comment-background:                            rgba(0,0,0,0);
+
+@comment-primary-border-width:                  3px;
+@comment-primary-border:                        @global-secondary-background;
+@comment-primary-background:                    rgba(0,0,0,0);
+
+@comment-meta-font-family:                      @global-alt-2-font-family;
+@comment-meta-font-weight:                      @global-alt-2-font-weight;
+@comment-meta-text-transform:                   @global-text-transform;
+@comment-meta-letter-spacing:                   @global-letter-spacing;
+
+
+// Component
+// ========================================================================
+
+.hook-comment() {}
+
+
+// Sub-object `uk-comment-header`
+// ========================================================================
+
+.hook-comment-header() {
+    padding: @comment-padding;
+    border: @comment-border-width solid @comment-border;
+    border-radius: @comment-border-radius;
+    background: @comment-background;
+}
+
+
+// Sub-object `uk-comment-avatar`
+// ========================================================================
+
+.hook-comment-avatar() {}
+
+
+// Sub-object `uk-comment-title`
+// ========================================================================
+
+.hook-comment-title() {}
+
+
+// Sub-object `uk-comment-meta`
+// ========================================================================
+
+.hook-comment-meta() {
+    font-family: @comment-meta-font-family;
+    font-weight: @comment-meta-font-weight;
+    text-transform: @comment-meta-text-transform;
+    letter-spacing: @comment-meta-letter-spacing;
+}
+
+
+// Sub-object `uk-comment-body`
+// ========================================================================
+
+.hook-comment-body() {
+    padding-left: @comment-padding;
+    padding-right: @comment-padding;
+}
+
+
+// Sub-object `uk-comment-primary`
+// ========================================================================
+
+.hook-comment-primary() {}
+
+
+// Miscellaneous
+// ========================================================================
+
+.hook-comment-misc() {
+
+    // Comment by administrator
+    .uk-comment-primary .uk-comment-header {
+        border-width: @comment-primary-border-width;
+        border-color: @comment-primary-border;
+        background: @comment-primary-background;
+    }
+
+}

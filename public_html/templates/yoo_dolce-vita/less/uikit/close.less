@@ -1,0 +1,112 @@
+// Copyright (C) YOOtheme GmbH, YOOtheme Proprietary Use License (http://www.yootheme.com/license) */
+
+//
+// Component: Close
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+@close-size:                                    20px;
+@close-alt-padding:                             0;
+
+@close-alt-background:                          @global-secondary-background;
+
+//
+// New
+//
+
+@close-icon:                                    '\e117';
+@close-icon-size:                               13px;
+@close-color:                                   @global-highlight-color;
+@close-opacity:                                 1;
+@close-hover-opacity:                           0.7;
+@close-onclick-color:                           @global-highlight-color;
+@close-onclick-opacity:                         1;
+
+@close-alt-size:                                26px;
+@close-alt-color:                               @global-secondary-highlight-color;
+@close-alt-opacity:                             1;
+@close-alt-hover-background:                    @global-primary-background;
+@close-alt-hover-color:                         @global-primary-highlight-color;
+@close-alt-hover-opacity:                       1;
+@close-alt-onclick-color:                       @global-primary-muted-color;
+@close-alt-onclick-opacity:                     1;
+
+
+// Component
+// ========================================================================
+
+.hook-close() {
+    color: @close-color;
+    background: none;
+    text-decoration: none;
+    opacity: @close-opacity;
+    -webkit-transition: opacity 0.1s linear;
+    transition: opacity 0.1s linear;
+}
+
+
+// Modifier: `uk-close-alt`
+// ========================================================================
+
+.hook-close-alt() {
+    width: @close-alt-size;
+    line-height: @close-alt-size !important;
+    border-radius: round((@close-alt-size / 2));
+    opacity: @close-alt-opacity;
+    -webkit-transition: @global-transition;
+    transition: @global-transition;
+}
+
+
+// Miscellaneous
+// ========================================================================
+
+.hook-close-misc() {
+
+    // Close modifications
+    .uk-close::after {
+        content: @close-icon;
+        font-family: @global-theme-icon-font-family;
+        font-size: @close-icon-size;
+        -webkit-transition: @global-transition;
+        transition: @global-transition;
+    }
+
+    // Hover
+    .uk-close:hover,
+    .uk-close:focus { opacity: @close-hover-opacity; }
+
+    // Onclick
+    .uk-close:active {
+        color: @close-onclick-color;
+        opacity: @close-onclick-opacity;
+    }
+
+    // Close Alt modifications
+    .uk-close-alt::after {
+        color: @close-alt-color;
+        opacity: @close-alt-opacity;
+    }
+
+    // Hover
+    .uk-close-alt:hover { background: @close-alt-hover-background; }
+
+    .uk-close-alt:hover,
+    .uk-close-alt:focus { opacity: @close-alt-opacity; }
+
+    .uk-close-alt:hover::after {
+        color: @close-alt-hover-color;
+        opacity: @close-alt-hover-opacity;
+    }
+
+    // Onclick
+    .uk-close-alt:active::after {
+        color: @close-alt-onclick-color;
+        opacity: @close-alt-onclick-opacity;
+    }
+
+}

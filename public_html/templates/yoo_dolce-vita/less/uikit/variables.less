@@ -1,0 +1,185 @@
+// Copyright (C) YOOtheme GmbH, YOOtheme Proprietary Use License (http://www.yootheme.com/license) */
+
+//
+// Component: Variables
+//
+// ========================================================================
+
+
+// Global variables
+// ========================================================================
+
+//
+// Typography
+//
+
+@global-font-family:                            'Noto Serif', Times New Roman, serif;
+@global-alt-1-font-family:                      'Montserrat', Helvetica, Arial, sans-serif;
+@global-alt-2-font-family:                      'Montserrat', Helvetica, Arial, sans-serif;
+
+@global-font-size:                              16px;
+@global-line-height:                            26px;
+@global-font-weight:                            400;
+@global-alt-1-font-weight:                      400;
+@global-alt-2-font-weight:                      400;
+@global-bold-font-weight:                       700;
+@global-text-transform:                         uppercase;
+@global-letter-spacing:                         2px;
+@global-alt-1-text-transform:                   none;
+@global-alt-1-letter-spacing:                   0;
+@global-alt-2-text-transform:                   @global-text-transform;
+@global-alt-2-letter-spacing:                   @global-letter-spacing;
+@global-h1-font-size:                           54px;
+@global-h1-line-height:                         58px;
+@global-h3-font-size:                           26px;
+@global-h3-line-height:                         30px;
+@global-ui-font-size:                           12px;
+
+@global-theme-icon-font-family:                 'theme-icons';
+
+//
+// General
+//
+
+@global-background:                             #FFF;
+
+@global-light-background:                       #F6F6F9;
+@global-dark-background:                        #E4E4E9;
+
+@global-shadow:                                 rgba(71,71,85,1);
+
+@global-border-width:                           1px;
+@global-border-radius:                          0;
+@global-border:                                 fade(@global-highlight-color, 10%);
+@global-hover-border:                           fade(@global-highlight-color, 15%);
+
+@global-color:                                  #6D6D77;
+@global-muted-color:                            #BBBBC3;
+@global-highlight-color:                        #232331;
+
+@global-link-color:                             #EDC64A;
+@global-link-hover-color:                       @global-highlight-color;
+@global-link-text-decoration:                   underline;
+@global-link-hover-text-decoration:             line-through;
+
+@global-contrast-color:                         #FFF;
+
+//
+// Primary
+//
+
+@global-primary-background:                     #EDC64A;
+@global-primary-hover-background:               desaturate(darken(@global-primary-background, 4%), 5%);
+@global-primary-active-background:              desaturate(darken(@global-primary-background, 12%), 8%);
+@global-primary-shadow:                         rgba(139,90,0,1);
+@global-primary-contrast-background:            @global-secondary-background;
+@global-primary-border:                         desaturate(darken(@global-primary-background, 8%), 8%);
+@global-primary-hover-border:                   desaturate(darken(@global-primary-background, 15%), 8%);
+
+@global-primary-color:                          @global-primary-highlight-color;
+@global-primary-muted-color:                    fade(saturate(darken(@global-primary-link-color, 10%), 10%), 70%);
+@global-primary-highlight-color:                #181822;
+@global-primary-link-color:                     #945E00;
+@global-primary-link-hover-color:               darken(@global-primary-link-color, 20%);
+
+//
+// Secondary
+//
+
+@global-secondary-background:                   #181822;
+@global-secondary-hover-background:             desaturate(lighten(@global-secondary-background, 3%), 3%);
+@global-secondary-active-background:            saturate(darken(@global-secondary-background, 4%), 3%);
+@global-secondary-shadow:                       rgba(13,13,18,1);
+@global-secondary-contrast-background:          #2A2A36;
+@global-secondary-border:                       fade(@global-secondary-highlight-color, 6%);
+@global-secondary-hover-border:                 fade(@global-secondary-highlight-color, 12%);
+
+@global-secondary-color:                        #858A9D;
+@global-secondary-muted-color:                  fade(@global-secondary-color, 50%);
+@global-secondary-highlight-color:              #F2F3FF;
+@global-secondary-link-color:                   @global-link-color;
+@global-secondary-link-hover-color:             lighten(@global-secondary-link-color, 10%);
+
+//
+// Success, Warning, Danger
+//
+
+@global-success-background:                     #80D899;
+@global-success-hover-background:               desaturate(darken(@global-success-background, 5%), 5%);
+@global-success-active-background:              desaturate(darken(@global-success-background, 8%), 5%);
+@global-success-shadow:                         fade(desaturate(darken(@global-success-active-background, 20%), 10%), 20%);
+
+@global-success-color:                          #5EAE6B;
+
+@global-warning-background:                     #FF915D;
+@global-warning-hover-background:               desaturate(darken(@global-warning-background, 3%), 5%);
+@global-warning-active-background:              desaturate(darken(@global-warning-background, 12%), 8%);
+@global-warning-shadow:                         fade(desaturate(darken(@global-warning-active-background, 20%), 15%), 20%);
+
+@global-warning-color:                          #F58951;
+
+@global-danger-background:                      #F66F6F;
+@global-danger-hover-background:                desaturate(darken(@global-danger-background, 5%), 5%);
+@global-danger-active-background:               desaturate(darken(@global-danger-background, 8%), 8%);
+@global-danger-shadow:                          fade(desaturate(darken(@global-danger-active-background, 10%), 15%), 40%);
+
+@global-danger-color:                           #E94848;
+
+//
+// Spacings
+//
+
+@global-margin:                                 25px;
+@global-margin-large:                           40px;
+@global-margin-xlarge:                          60px;
+@global-margin-small:                           15px;
+
+@global-grid-gutter:                            25px;
+@global-grid-gutter-large:                      40px;
+@global-grid-gutter-xlarge:                     60px;
+@global-grid-gutter-small:                      15px;
+
+@global-padding:                                25px;
+@global-padding-large:                          40px;
+@global-padding-xlarge:                         60px;
+@global-padding-small:                          15px;
+
+//
+// Controls
+//
+
+@global-height:                                 40px;
+@global-height-mini:                            25px;
+@global-height-small:                           35px;
+@global-height-large:                           50px;
+
+//
+// Z-index
+//
+
+@global-z-index:                                1000;
+
+//
+// Animations
+//
+
+@global-transition:                             all 0.12s ease-in-out;
+@global-transform:                              scale(0.8);
+@global-hover-transform:                        scale(0.9);
+@global-active-transform:                       scale(1);
+@global-active-filter:                          blur(1px);
+
+//
+// Internal
+//
+
+@global-font-path:                              "../../fonts";
+@global-image-path:                             "../../images";
+
+@global-style:                                  'default';
+
+//
+// Breakpoints
+//
+
+@breakpoint-xlarge:                             1300px;

@@ -1,0 +1,100 @@
+// Copyright (C) YOOtheme GmbH, YOOtheme Proprietary Use License (http://www.yootheme.com/license) */
+
+//
+// Component: Alert
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+@alert-margin-vertical:                         @global-margin;
+@alert-padding:                                 10px 15px;
+@alert-large-padding:                           @global-padding;
+
+@alert-background:                              @global-primary-background;
+@alert-color:                                   @global-primary-highlight-color;
+
+@alert-success-background:                      @global-success-background;
+@alert-success-color:                           @global-primary-highlight-color;
+
+@alert-warning-background:                      @global-warning-background;
+@alert-warning-color:                           @global-primary-highlight-color;
+
+@alert-danger-background:                       @global-danger-background;
+@alert-danger-color:                            @global-primary-highlight-color;
+
+//
+// New
+//
+
+@alert-border-radius:                           @global-border-radius;
+@alert-font-family:                             @global-alt-2-font-family;
+@alert-font-weight:                             @global-alt-2-font-weight;
+@alert-font-size:                               @global-ui-font-size;
+@alert-text-transform:                          @global-alt-2-text-transform;
+@alert-letter-spacing:                          @global-alt-2-letter-spacing;
+@alert-close-color:                             @global-primary-highlight-color;
+
+
+// Component
+// ========================================================================
+
+.hook-alert() {
+
+    border-radius: @alert-border-radius;
+
+    .uk-close { color: @alert-close-color; }
+
+}
+
+
+// Modifier: `uk-alert-success`
+// ========================================================================
+
+.hook-alert-success() {
+
+    .uk-close { color: @alert-close-color; }
+
+}
+
+
+// Modifier: `uk-alert-warning`
+// ========================================================================
+
+.hook-alert-warning() {
+
+    .uk-close { color: @alert-close-color; }
+
+}
+
+
+// Modifier: `uk-alert-danger`
+// ========================================================================
+
+.hook-alert-danger() {
+
+    .uk-close { color: @alert-close-color; }
+
+}
+
+
+// Miscellaneous
+// ========================================================================
+
+.hook-alert-misc() {
+
+    // Text style when it is not uk-alert-large
+    .uk-alert:not(.uk-alert-large) {
+        font-family: @alert-font-family;
+        font-weight: @alert-font-weight;
+        font-size: @alert-font-size;
+        text-transform: @alert-text-transform;
+        letter-spacing: @alert-letter-spacing;
+    }
+
+    // Close
+    .uk-close { line-height: inherit; }
+
+}

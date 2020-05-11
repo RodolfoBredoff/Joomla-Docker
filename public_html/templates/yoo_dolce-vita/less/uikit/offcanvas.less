@@ -1,0 +1,105 @@
+// Copyright (C) YOOtheme GmbH, YOOtheme Proprietary Use License (http://www.yootheme.com/license) */
+
+//
+// Component: Off-canvas
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+@offcanvas-z-index:                             (@global-z-index + 30);
+@offcanvas-background:                          fade(@global-secondary-background, 50%);
+
+@offcanvas-bar-width:                           200px;
+@offcanvas-bar-background:                      @global-secondary-background;
+
+@offcanvas-panel-margin:                        25px 0;
+@offcanvas-panel-color:                         @global-secondary-color;
+@offcanvas-panel-title-color:                   @global-secondary-highlight-color;
+@offcanvas-panel-link-color:                    @global-secondary-link-color;
+@offcanvas-panel-link-hover-color:              @global-secondary-link-hover-color;
+
+//
+// New
+//
+
+@offcanvas-padding-vertical:                    0;
+@offcanvas-padding-horizontal:                  @global-padding;
+
+@offcanvas-padding-vertical-large:              @global-padding-large;
+@offcanvas-padding-horizontal-large:            @global-padding-large;
+
+@offcanvas-after-background:                    darken(@offcanvas-bar-background, 4%);
+@offcanvas-after-shadow:                        darken(@offcanvas-bar-background, 3%);
+
+@offcanvas-panel-title-font-family:             @global-alt-1-font-family;
+@offcanvas-panel-title-font-size:               @global-h3-font-size;
+@offcanvas-panel-title-font-weight:             @global-alt-1-font-weight;
+@offcanvas-panel-title-text-transform:          @global-alt-1-text-transform;
+@offcanvas-panel-title-letter-spacing:          0;
+
+
+// Component
+// ========================================================================
+
+.hook-offcanvas() {}
+
+
+// Sub-object `uk-offcanvas-bar`
+// ========================================================================
+
+.hook-offcanvas-bar() { padding: @offcanvas-padding-vertical @offcanvas-padding-horizontal; }
+
+
+// Panel in offcanvas
+// ========================================================================
+
+.hook-offcanvas-panel() {
+
+    .uk-panel-title {
+        font-family: @offcanvas-panel-title-font-family;
+        font-size: @offcanvas-panel-title-font-size;
+        font-weight: @offcanvas-panel-title-font-weight;
+        text-transform: @offcanvas-panel-title-text-transform;
+        letter-spacing: @offcanvas-panel-title-letter-spacing;
+    }
+}
+
+
+// Miscellaneous
+// ========================================================================
+
+.hook-offcanvas-misc() {
+
+    // Medium to large view ports
+    @media (min-width: @breakpoint-small) {
+
+        // More space
+        .uk-offcanvas-bar { padding: @offcanvas-padding-vertical-large @offcanvas-padding-horizontal-large; }
+
+        // Offcanvas shadow
+        .uk-offcanvas-bar:after {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            width: 1px;
+            background: @offcanvas-after-background;
+            box-shadow: 0 0 30px 20px @offcanvas-after-shadow;
+        }
+
+        .uk-offcanvas-bar-flip:after {
+            right: auto;
+            left: 0;
+            width: 1px;
+            background: @offcanvas-after-background;
+            box-shadow: 0 0 30px 20px @offcanvas-after-shadow;
+        }
+
+    }
+
+}

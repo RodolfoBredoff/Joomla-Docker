@@ -1,0 +1,73 @@
+// Copyright (C) YOOtheme GmbH, YOOtheme Proprietary Use License (http://www.yootheme.com/license) */
+
+//
+// Component: Breadcrumb
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+@breadcrumb-font-size:                          @global-ui-font-size;
+
+@breadcrumb-disabled-color:                     @global-muted-color;
+@breadcrumb-divider-margin:                     20px;
+@breadcrumb-divider:                            "//";
+
+//
+// New
+//
+
+@breadcrumb-divider-color:                      fade(@global-muted-color, 30%);
+@breadcrumb-font-family:                        @global-alt-2-font-family;
+@breadcrumb-font-weight:                        @global-alt-2-font-weight;
+@breadcrumb-text-transform:                     @global-alt-2-text-transform;
+@breadcrumb-letter-spacing:                     @global-alt-2-letter-spacing;
+@breadcrumb-hover-text-decoration:              @global-link-hover-text-decoration;
+
+@breadcrumb-color:                              @global-highlight-color;
+@breadcrumb-hover-color:                        @global-color;
+@breadcrumb-active-color:                       @global-link-color;
+
+
+// Component
+// ========================================================================
+
+.hook-breadcrumb() {
+
+    font-family: @breadcrumb-font-family;
+    font-weight: @breadcrumb-font-weight;
+    text-transform: @breadcrumb-text-transform;
+    letter-spacing: @breadcrumb-letter-spacing;
+
+    // Item
+    > li > a {
+        color: @breadcrumb-color;
+        text-decoration: none;
+        -webkit-transition: @global-transition;
+        transition: @global-transition;
+    }
+
+    // Item hover
+    > li > a:hover {
+        color: @breadcrumb-hover-color;
+        text-decoration: @breadcrumb-hover-text-decoration;
+    }
+
+    // Item active
+    > li.uk-active > * { color: @breadcrumb-active-color; }
+
+}
+
+
+// Items
+// ========================================================================
+
+.hook-breadcrumb-divider() { color: @breadcrumb-divider-color; }
+
+
+// Miscellaneous
+// ========================================================================
+
+.hook-breadcrumb-misc() {}

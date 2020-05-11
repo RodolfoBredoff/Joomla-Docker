@@ -1,0 +1,1557 @@
+// Copyright (C) YOOtheme GmbH, YOOtheme Proprietary Use License (http://www.yootheme.com/license) */
+
+@import "uikit/uikit.less";
+
+
+// ========================================================================
+// Warp theme
+// ========================================================================
+
+
+// Theme variables
+// ========================================================================
+
+//
+// Layout
+//
+
+@theme-frame-placeholder-background:                            @global-light-background;
+@theme-frame-background:                                        @theme-headerbar-background;
+@theme-frame-size:                                              @global-grid-gutter;
+@theme-frame-size-large:                                        @global-grid-gutter-large;
+@theme-frame-size-xlarge:                                       @global-grid-gutter-large;
+
+@theme-headerbar-background:                                    @global-background;
+@theme-headerbar-max-width:                                     400px;
+
+@theme-headerbar-icon-search:                                   "\e036";
+@theme-headerbar-icon-more:                                     "\e114";
+@theme-headerbar-icon-size:                                     16px;
+@theme-headerbar-icon-size-large:                               20px;
+@theme-headerbar-icon-color:                                    @global-highlight-color;
+@theme-headerbar-icon-hover-color:                              fade(@theme-headerbar-icon-color, 70%);
+@theme-headerbar-icon-click-color:                              @global-primary-color;
+@theme-headerbar-button-width:                                  35px;
+@theme-headerbar-button-height:                                 35px;
+@theme-headerbar-dropdown-background:                           @theme-headerbar-background;
+@theme-headerbar-dropdown-width:                                200px;
+
+@theme-navbar-background:                                       @theme-headerbar-background;
+@theme-navbar-dropdown-overlay-background:                      @theme-headerbar-background;
+
+@theme-footer-height:                                           150px;
+@theme-footer-totop-size:                                       40px;
+@theme-footer-totop-color:                                      @global-muted-color;
+@theme-footer-totop-hover-color:                                @global-highlight-color;
+@theme-footer-totop-active-color:                               @global-highlight-color;
+
+@theme-fixed-bar-width:                                         60px;
+
+//
+// Additions
+//
+
+// 'tm-address-horizontal' for <address></address>
+@theme-address-horizontal-label-width:                          100px;
+@theme-address-horizontal-data-margin:                          100px;
+@theme-address-horizontal-label-font-size:                      @global-ui-font-size;
+@theme-address-horizontal-label-color:                          @global-highlight-color;
+
+// 'tm-dotnav-follower'
+@theme-dotnav-active-background:                                @dotnav-active-background;
+
+
+// Theme Layout
+// ==========================================================================
+
+//
+// Blocks
+//
+
+html { overflow-y: scroll; }
+
+// Document height for desktop devices
+.uk-notouch body { min-height: 100vh; }
+
+//
+// Frame (Warp Option)
+//
+
+// Animation keyframes
+@-webkit-keyframes tm-frame-top {
+    0% { -webkit-transform: translateY(-80px); }
+    100% { -webkit-transform: translateY(0px); }
+}
+
+@keyframes tm-frame-top {
+    0% { transform: translateY(-80px); }
+    100% { transform: translateY(0px); }
+}
+
+@-webkit-keyframes tm-frame-bottom {
+    0% { -webkit-transform: translateY(80px); }
+    100% { -webkit-transform: translateY(0px); }
+}
+
+@keyframes tm-frame-bottom {
+    0% { transform: translateY(80px); }
+    100% { transform: translateY(0px); }
+}
+
+@-webkit-keyframes tm-frame-right {
+    0% { -webkit-transform: translateX(80px); }
+    100% { -webkit-transform: translateY(0px); }
+}
+
+@keyframes tm-frame-right {
+    0% { transform: translateX(80px); }
+    100% { transform: translateY(0px); }
+}
+
+@-webkit-keyframes tm-frame-left {
+    0% { -webkit-transform: translateX(-80px); }
+    100% { -webkit-transform: translateY(0px); }
+}
+
+@keyframes tm-frame-left {
+    0% { transform: translateX(-80px); }
+    100% { transform: translateY(0px); }
+}
+
+// Medium screens frame size
+@media (min-width: @breakpoint-medium) {
+
+    // With Padding
+    .tm-page-padding .tm-page-frame { padding: 0 @theme-frame-size; }
+
+    .tm-page-frame {
+        box-sizing: border-box;
+        background: @theme-frame-placeholder-background;
+        -webkit-transition: padding 0.2s ease-in-out;
+        transition: padding 0.2s ease-in-out;
+    }
+
+    // Adding more space to the block container
+    .tm-page-overlay .tm-page-frame .uk-block:not(.tm-grid-collapse) > .uk-container { padding: 0 round((@theme-frame-size + @utility-container-padding-horizontal)); }
+
+    [class*='tm-frame-'] {
+        position: fixed;
+        z-index: @global-z-index;
+        background: @theme-frame-background;
+        -webkit-animation-duration: 0.5s;
+        animation-duration: 0.5s;
+        -webkit-animation-delay: 0s;
+        animation-delay: 0s;
+        -webkit-animation-timing-function: ease-out;
+        animation-timing-function: ease-out;
+        -webkit-animation-iteration-count: 1;
+        animation-iteration-count: 1;
+        -webkit-animation-fill-mode: both;
+        animation-fill-mode: both;
+    }
+
+    .tm-frame-top,
+    .tm-frame-bottom {
+        width: 100%;
+        height: @theme-frame-size;
+    }
+
+    .tm-frame-right,
+    .tm-frame-left {
+        width: @theme-frame-size;
+        height: 100%;
+    }
+
+    .tm-frame-top {
+        top: 0;
+        left: 0;
+        -webkit-animation-name: tm-frame-top;
+        animation-name: tm-frame-top;
+    }
+
+    .tm-frame-bottom {
+        bottom: 0;
+        right: 0;
+        -webkit-animation-name: tm-frame-bottom;
+        animation-name: tm-frame-bottom;
+    }
+
+    .tm-frame-right {
+        top: 0;
+        right: 0;
+        -webkit-animation-name: tm-frame-right;
+        animation-name: tm-frame-right;
+    }
+
+    .tm-frame-left {
+        top: 0;
+        left: 0;
+        -webkit-animation-name: tm-frame-left;
+        animation-name: tm-frame-left;
+    }
+
+}
+
+// Large screens frame size
+@media (min-width: @breakpoint-large) {
+
+    // Adding padding on medium screens
+    .tm-page-frame { padding: @theme-frame-size-large; }
+
+    // Adding more space to the block container
+    .tm-page-overlay .tm-page-frame .uk-block:not(.tm-grid-collapse) > .uk-container { padding: 0 round((@theme-frame-size-large + @utility-container-large-padding-horizontal)); }
+
+    .tm-frame-top,
+    .tm-frame-bottom { height: @theme-frame-size-large; }
+
+    .tm-frame-right,
+    .tm-frame-left { width: @theme-frame-size-large; }
+
+    // Frame style for 'uk-block' component
+    .tm-block-frame .uk-block + .uk-block { border-top: @theme-frame-size-large solid @theme-frame-background; }
+
+}
+
+// Extra Large screens frame size
+@media (min-width: @breakpoint-xlarge) {
+
+    // Frame padding
+    .tm-page-padding .tm-page-frame { padding: @theme-frame-size-xlarge; }
+    .tm-page-overlay .tm-page-frame { padding: 0; }
+
+    // Adding more space to the block container
+    .tm-page-overlay .tm-page-frame .uk-block:not(.tm-grid-collapse) > .uk-container { padding: 0 round((@theme-frame-size-xlarge + @utility-container-large-padding-horizontal)); }
+
+    .tm-frame-top,
+    .tm-frame-bottom { height: @theme-frame-size-xlarge; }
+
+    .tm-frame-right,
+    .tm-frame-left { width: @theme-frame-size-xlarge; }
+
+    // Frame style for 'uk-block' component
+    .tm-block-frame .uk-block + .uk-block { border-top-width: @theme-frame-size-xlarge; }
+
+}
+
+//
+// Blocks & Container
+//
+
+// Image opacity (Warp Option)
+[class*='tm-block-image-opacity-'] {
+
+    position: relative;
+
+    // Image opacity overlay
+    &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        background: @global-background;
+        z-index: 2;
+    }
+
+    &.uk-block-muted::after { background: @global-light-background; }
+    &.uk-block-primary::after { background: @global-primary-background; }
+    &.uk-block-secondary::after { background: @global-secondary-background; }
+
+    // Putting the container above the opacity background
+    > .uk-container {
+        position: relative;
+        z-index: 3;
+    }
+
+}
+// Opacity values
+.tm-block-image-opacity-90::after { opacity: 0.1; }
+.tm-block-image-opacity-80::after { opacity: 0.2; }
+.tm-block-image-opacity-70::after { opacity: 0.3; }
+.tm-block-image-opacity-60::after { opacity: 0.4; }
+.tm-block-image-opacity-50::after { opacity: 0.5; }
+.tm-block-image-opacity-40::after { opacity: 0.6; }
+.tm-block-image-opacity-30::after { opacity: 0.7; }
+.tm-block-image-opacity-20::after { opacity: 0.8; }
+.tm-block-image-opacity-10::after { opacity: 0.9; }
+
+// Image blend mode (Warp Option) (does not work in any Internet Explorer release yet)
+.tm-block-image-blend-multiply { background-blend-mode: multiply; }
+.tm-block-image-blend-screen { background-blend-mode: screen; }
+.tm-block-image-blend-overlay { background-blend-mode: overlay; }
+.tm-block-image-blend-darken { background-blend-mode: darken; }
+.tm-block-image-blend-lighten { background-blend-mode: lighten; }
+.tm-block-image-blend-color-dodge { background-blend-mode: color-dodge; }
+.tm-block-image-blend-color-burn { background-blend-mode: color-burn; }
+.tm-block-image-blend-hard-light { background-blend-mode: hard-light; }
+.tm-block-image-blend-soft-light { background-blend-mode: soft-light; }
+.tm-block-image-blend-difference { background-blend-mode: difference; }
+.tm-block-image-blend-exclusion { background-blend-mode: exclusion; }
+.tm-block-image-blend-hue { background-blend-mode: hue; }
+.tm-block-image-blend-saturation { background-blend-mode: saturation; }
+.tm-block-image-blend-color { background-blend-mode: color; }
+.tm-block-image-blend-luminosity { background-blend-mode: luminosity; }
+
+// Full-height (Warp Option)
+@media (min-width: @breakpoint-medium) {
+
+    // Full Height with centered content (Warp Option)
+    .tm-block-fullheight { padding: 0; }
+
+}
+
+// Setting height to 100% viewport height and adding flex behavior
+.tm-block-fullheight > .uk-container {
+
+    &:extend(.uk-height-viewport all);
+    &:extend(.uk-flex all);
+    &:extend(.uk-flex-center all);
+    &:extend(.uk-flex-middle all);
+
+}
+
+// Min-height for full height layout blocks for smaller view ports
+@media (max-width: @breakpoint-small-max) {
+
+    .tm-block-fullheight > .uk-container,
+    .tm-block-fullheight > .uk-container .uk-slideshow-fullscreen,
+    .tm-block-fullheight > .uk-container .uk-slideshow-fullscreen > li {
+
+        &:extend(.uk-height-1-1 all);
+        min-height: @utility-height-viewport-min-height;
+
+    }
+
+}
+
+// Full-width (Warp Option)
+.tm-block-fullwidth > .uk-container  { max-width: 100%; }
+
+// No Padding (Warp Option)
+.tm-block-collapse { padding: 0; }
+
+// Grid collapse (removing the grid gutter) (Warp Option)
+.tm-grid-collapse {
+
+    // uk-block padding reset
+    padding: 0;
+
+    > .uk-container {
+
+        // uk-container padding reset
+        padding: 0;
+
+        // Removing 1 pixel bug
+        &::before,
+        &::after { display: none; }
+
+        // Removing the gutter
+        > .uk-grid {
+            width: 100%;
+            margin-left: 0;
+        }
+
+        // Resetting the gutter and removing the Javascript margin
+        > .uk-grid > * {
+            margin-top: 0 !important;
+            margin-bottom: 0 !important;
+            padding-left: 0;
+        }
+
+    }
+
+}
+
+// Adding more white space when a <div> container or ul.uk-subnav follows on a uikit prefixed headline
+.uk-h1 + div:not([class*='uk-margin']),
+.uk-h2 + div:not([class*='uk-margin']),
+.uk-h3 + div:not([class*='uk-margin']),
+.uk-h4 + div:not([class*='uk-margin']),
+.uk-h5 + div:not([class*='uk-margin']),
+.uk-h6 + div:not([class*='uk-margin']),
+.uk-subnav + [class*='uk-grid'],
+.uk-heading-large + * { margin-top: @global-margin-large; }
+
+@media (min-width: @breakpoint-medium) {
+
+    .uk-h1 + div:not([class*='uk-margin']),
+    .uk-h2 + div:not([class*='uk-margin']),
+    .uk-h3 + div:not([class*='uk-margin']),
+    .uk-h4 + div:not([class*='uk-margin']),
+    .uk-h5 + div:not([class*='uk-margin']),
+    .uk-h6 + div:not([class*='uk-margin']),
+    .uk-subnav + [class*='uk-grid'],
+    .uk-heading-large + * { margin-top: @global-margin-xlarge; }
+
+}
+
+//
+// Headerbar
+//
+
+// Sticky enabled
+.uk-sticky-placeholder,
+.uk-sticky-init.uk-active { z-index: (@global-z-index + 1); }
+
+// Removing the padding when page frame is active
+.tm-sticky .tm-page-frame { padding-top: 0; }
+
+// 'tm-logo' reseting 'uk-navbar-brand' properties
+.tm-logo {
+
+    height: auto;
+    float: none;
+
+    // Setting a responsive height for image
+    img { &:extend(.uk-responsive-height all); }
+
+}
+
+.tm-headerbar:not(.tm-headerbar-overlay) {
+    position: relative;
+    z-index: (@global-z-index + 1);
+    background: @theme-headerbar-background;
+}
+
+// Headerbar left + right
+.tm-headerbar-left,
+.tm-headerbar-right {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    max-width: @theme-headerbar-max-width;
+}
+
+.tm-headerbar-left { left: @global-grid-gutter; }
+.tm-headerbar-right { right: @global-grid-gutter; }
+
+// Increasing the gutter when theme frame is enabled
+.tm-framed .tm-headerbar-left { left: @theme-frame-size-large; }
+.tm-framed .tm-headerbar-right { right: @theme-frame-size-large; }
+
+// uk-panel in headerbar position
+.tm-headerbar-left .uk-panel,
+.tm-headerbar-right .uk-panel {
+    padding: @global-padding 0;
+    line-height: 1.2;
+}
+
+// Navbar search + more
+.tm-headerbar .tm-search,
+.tm-headerbar .tm-more {
+
+    position: relative;
+
+    // Search button
+    .tm-headerbar-button {
+
+        width: @theme-headerbar-button-width;
+        height: @theme-headerbar-button-height;
+        line-height: 1;
+        background: none;
+        border: none;
+        outline: 0;
+        cursor: pointer;
+
+        // Setting the icon
+        &::before {
+            font-family: @global-theme-icon-font-family;
+            font-size: @theme-headerbar-icon-size;
+            color: @theme-headerbar-icon-color;
+            -webkit-transition: @global-transition;
+            transition: @global-transition;
+        }
+
+        // Hover
+        &:hover::before { color: @theme-headerbar-icon-hover-color; }
+
+        // Onclick
+        &:focus::before,
+        &:active::before { color: @theme-headerbar-icon-click-color; }
+
+    }
+
+    // Icons
+    .tm-search-button::before { content: @theme-headerbar-icon-search; }
+    .tm-more-button::before { content: @theme-headerbar-icon-more; }
+
+    // Dropdown style
+    .tm-headerbar-dropdown {
+        width: @theme-headerbar-dropdown-width;
+        margin-left: 0;
+        background-color: @theme-headerbar-dropdown-background;
+    }
+
+}
+
+// Hiding the default icon
+.tm-headerbar .tm-search .uk-search::before { display: none; }
+
+// Search field width
+.tm-headerbar .tm-search .tm-search-dropdown .uk-search-field,
+.tm-headerbar .tm-search .tm-search-dropdown .uk-search-field:focus { width: @theme-headerbar-dropdown-width; }
+
+//
+// Headerbar Default
+// Theme source: yoo_dolce-vita/layouts/header.default.php
+//
+
+.tm-headerbar-default { padding: @global-padding 0; }
+.tm-headerbar-default .tm-search .tm-headerbar-button::before,
+.tm-headerbar-default .tm-more .tm-headerbar-button::before { font-size: @theme-headerbar-icon-size-large; }
+
+//
+// Headerbar Center
+// Theme source: yoo_dolce-vita/layouts/header.centered.php
+//
+
+.tm-headerbar-center { padding: @global-padding @global-padding-large; }
+
+//
+// Headerbar Single Row
+// Theme source: yoo_dolce-vita/layouts/header.single.php
+//
+
+.tm-headerbar-single { padding: @global-padding-large 0; box-sizing: border-box; }
+
+// Putting the logo above the 'tm-dropdown-overlay'
+.tm-headerbar-single .tm-headerbar-left { z-index: (@global-z-index + 11); }
+
+// Setting the logo height to 100%
+.tm-headerbar-single .tm-logo {
+    height: 100%;
+    padding: 0 @global-padding;
+}
+
+.tm-headerbar-single .tm-dropdown-overlay {
+    top: @navbar-nav-height;
+    left: 0;
+}
+
+//
+// Headerbar Overlay on Hover/Scroll
+// Theme source: yoo_dolce-vita/layouts/header.overlay.php
+//
+
+.tm-headerbar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: (@global-z-index + 2);
+    -webkit-transition: @global-transition;
+    transition: @global-transition;
+}
+
+// Large screens only
+@media (min-width: @breakpoint-medium) {
+
+    .tm-headerbar-overlay {
+
+        // Logo Container
+        .tm-logo-wrapper {
+
+            width: 100%;
+            text-align: center;
+
+            // Logo
+            .tm-logo {
+                padding: @global-padding-small round(@global-padding-small * 2);
+                background: @theme-headerbar-background;
+            }
+
+        }
+
+        // Background Animation
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            width: 100%;
+            height: 100%;
+            background: @theme-navbar-dropdown-overlay-background;
+            display: none;
+        }
+
+        // Hide Navbar
+        .tm-navbar { display: none; }
+
+        // Display Navbar + Background
+        &:hover,
+        &.tm-navbar-open {
+
+            // Background Animation
+            &::after {
+                display: block;
+                -webkit-animation: uk-slide-bottom-fixed 0.4s ease-in-out;
+                animation: uk-slide-bottom-fixed 0.4s ease-in-out;
+            }
+
+            // Show Navbar
+            .tm-navbar {
+                display: block;
+                width: 100%;
+                background: rgba(0,0,0,0);
+                -webkit-animation: uk-fade-top 0.2s ease-in-out;
+                animation: uk-fade-top 0.2s ease-in-out;
+            }
+
+        }
+
+    }
+
+}
+
+// Small Logo in tm-header-overlay
+.tm-headerbar-overlay .tm-logo-small {
+    width: auto;
+    height: auto;
+    padding: @global-padding-small round(@global-padding-small * 1.25);
+    background: @theme-headerbar-background;
+    text-align: center;
+    float: none;
+}
+
+//
+// Navbar
+//
+
+// Setting the navbar background
+.tm-navbar { background: @theme-navbar-background; }
+
+// Navbar Centered
+.tm-navbar-centered { padding-bottom: @global-padding; }
+
+// Navbar Default
+.tm-navbar-default { padding-top: @global-padding-small; }
+.tm-navbar-default .uk-navbar-nav { margin-left: -(@navbar-margin-horizontal); }
+.tm-navbar-default .uk-nav-navbar > li > a { text-align: left; }
+
+
+// Overlay container
+.tm-dropdown-overlay {
+    position: absolute;
+    z-index: (@global-z-index + 10);
+    width: 100%;
+    background: @theme-navbar-dropdown-overlay-background;
+}
+
+// Dropdown modifications for tm-dropdown-overlay
+.tm-navbar-overlay-true .uk-dropdown-navbar {
+    padding-top: 0;
+    background: rgba(0,0,0,0);
+}
+
+.tm-navbar-default.tm-navbar-overlay-true .uk-dropdown-navbar  { padding-left: 0; }
+
+//
+// Content
+//
+
+// Breadcrumb Centered (Warp Option)
+.tm-breadcrumb-centered .uk-breadcrumb {
+    margin-bottom: @global-margin-large;
+    text-align: center;
+}
+
+// Large view ports
+@media (min-width: @breakpoint-medium) {
+
+    .tm-breadcrumb-centered .uk-breadcrumb { margin-bottom: @global-margin-xlarge; }
+
+}
+
+//
+// Main
+//
+
+// Adding a gutter to the main container
+.tm-main-top + .tm-content,
+.tm-content + .tm-main-bottom { margin-top: @global-grid-gutter; }
+
+// Large Screens
+@media (min-width: @breakpoint-large) {
+
+    .tm-main-top + .tm-content,
+    .tm-content + .tm-main-bottom { margin-top: @global-grid-gutter-large; }
+
+}
+
+// Extra Large Screens
+@media (min-width: @breakpoint-xlarge) {
+
+    .tm-main-top + .tm-content,
+    .tm-content + .tm-main-bottom { margin-top: @global-grid-gutter-xlarge; }
+
+}
+
+//
+// Bottom Offset
+//
+
+// Panel modifications
+.tm-bottom-offset > * > .uk-panel { padding: @global-padding-large; }
+
+// Shadow
+.tm-bottom-offset > * > .uk-panel::after { opacity: 1; }
+
+// Large Screens
+@media (min-width: @breakpoint-large) {
+
+    .tm-bottom-offset {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 3;
+        width: 100%;
+        -webkit-transform: translateY(-50%);
+        transform: translateY(-50%);
+    }
+
+    // Block Paddings
+    .tm-offset .tm-block-offset-parent { padding-bottom: round(@block-large-padding-vertical-large - @global-grid-gutter-large); }
+    .tm-offset .tm-block-footer { padding-top: round(@block-large-padding-vertical-large - @global-grid-gutter-large); }
+
+    // Panel modifications
+    .tm-bottom-offset > * > .uk-panel { padding: @global-padding-xlarge; }
+
+}
+
+// Small to Medium Screens
+@media (max-width: @breakpoint-medium-max) {
+
+    // Container Gutter
+    .tm-bottom-offset > .tm-container { margin-bottom: @global-grid-gutter-large; }
+
+}
+
+// Small to Medium Screens
+@media (min-width: @breakpoint-medium) and (max-width: @breakpoint-medium-max) {
+
+    // Container Padding
+    .tm-bottom-offset > .tm-container { padding: 0 @block-large-padding-vertical-medium; }
+
+    // Container Padding when frame is enabled
+    .tm-page-overlay .tm-page-frame .tm-bottom-offset > .tm-container { padding: 0 round((@block-large-padding-vertical-medium + @theme-frame-size)); }
+
+}
+
+//
+// Footer
+//
+
+.tm-footer + .tm-footer-meta {
+    box-sizing: border-box;
+    margin: @global-margin-large 0 0 0;
+    border-top: @global-border-width solid @global-border;
+}
+
+// Border color
+.uk-contrast .tm-footer + .tm-footer-meta { border-top-color: @global-secondary-border; }
+.uk-contrast-primary .tm-footer + .tm-footer-meta { border-top-color: @global-primary-border; }
+
+.tm-footer-meta {
+    position: relative;
+    min-height: @theme-footer-height;
+}
+
+// Footer left + right
+@media (min-width: @breakpoint-large) {
+
+    .tm-footer + .tm-footer-meta { margin-top: @global-margin-xlarge; }
+
+    .tm-footer-left,
+    .tm-footer-right {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+    }
+
+    .tm-footer-left{ left: 0; }
+    .tm-footer-right { right: 0; }
+
+}
+
+// Footer on small view ports
+@media (max-width: @breakpoint-medium-max) {
+
+    .tm-footer-meta {
+        display: block;
+        padding-top: @global-padding-xlarge;
+    }
+
+    .tm-footer-meta > div:not(:first-child) { margin-top: @global-grid-gutter; }
+
+    .tm-footer-meta > div {
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+
+    .tm-footer-meta > div > .uk-panel .uk-flex {
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+    }
+
+}
+
+// Footer Totop Scroller (Warp Option)
+.tm-footer-meta .tm-totop-scroller {
+
+    display: inline-block;
+    width: @theme-footer-totop-size;
+    height: @theme-footer-totop-size;
+    line-height: @theme-footer-totop-size;
+    text-align: center;
+    text-decoration: none;
+
+    // Icon
+    &::before {
+        content: "\e096";
+        color: @theme-footer-totop-color;
+        font-family: @global-theme-icon-font-family;
+        font-size: 18px;
+        -webkit-transition: @global-transition;
+        transition: @global-transition;
+    }
+
+    // Hover
+    &:hover::before { color: @theme-footer-totop-hover-color; }
+
+    // Click
+    &:focus::before,
+    &:active::before {
+        color: @theme-footer-totop-active-color;
+        -webkit-filter: @button-active-filter;
+        filter: @button-active-filter;
+    }
+
+}
+
+// uk-contrast
+.uk-contrast .tm-footer-meta .tm-totop-scroller::before { color: @global-secondary-muted-color; }
+.uk-contrast .tm-footer-meta .tm-totop-scroller:hover::before { color: @global-secondary-highlight-color; }
+.uk-contrast .tm-footer-meta .tm-totop-scroller:focus::before,
+.uk-contrast .tm-footer-meta .tm-totop-scroller:active::before { color: @global-secondary-highlight-color; }
+
+// uk-contrast-primary
+.uk-contrast-primary .tm-footer-meta .tm-totop-scroller::before { color: @global-primary-muted-color; }
+.uk-contrast-primary .tm-footer-meta .tm-totop-scroller:hover::before { color: @global-primary-highlight-color; }
+.uk-contrast-primary .tm-footer-meta .tm-totop-scroller:focus::before,
+.uk-contrast-primary .tm-footer-meta .tm-totop-scroller:active::before { color: @global-primary-highlight-color; }
+
+//
+// Fixed-Bar
+//
+
+// Large screens
+@media (min-width: @breakpoint-medium) {
+
+    .tm-fixed-bar {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: @theme-fixed-bar-width;
+        z-index: 7;
+    }
+
+    .tm-framed .tm-fixed-bar {
+        top: @theme-frame-size-large;
+        right: @theme-frame-size-large;
+        bottom: @theme-frame-size-large;
+    }
+
+}
+
+// Extra Large screens
+@media (min-width: @breakpoint-xlarge) {
+
+    .tm-framed .tm-fixed-bar {
+        top: @theme-frame-size-xlarge;
+        right: @theme-frame-size-xlarge;
+        bottom: @theme-frame-size-xlarge;
+    }
+
+}
+
+
+// Theme Additions
+// ==========================================================================
+
+//
+// Hide / Show page title for WordPress (Warp Option)
+//
+
+.tm-page-title-false .tm-content > .uk-article > .uk-article-title { display: none; }
+
+//
+// Font modifiers
+//
+
+.tm-font {
+    font-family: @global-font-family;
+    font-weight: @global-font-weight;
+    text-transform: @global-text-transform;
+    letter-spacing: @global-letter-spacing;
+}
+
+.tm-font-alt-1 {
+    font-family: @global-alt-1-font-family;
+    font-weight: @global-alt-1-font-weight;
+    text-transform: @global-alt-1-text-transform;
+    letter-spacing: @global-alt-1-letter-spacing;
+}
+
+.tm-font-alt-2 {
+    font-family: @global-alt-2-font-family;
+    font-weight: @global-alt-2-font-weight;
+    text-transform: @global-alt-2-text-transform;
+    letter-spacing: @global-alt-2-letter-spacing;
+}
+
+//
+// Modifier 'tm-contain-background-' for uk-block images
+//
+
+[class*='tm-contain-background-'] {
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.tm-contain-background-top-center { background-position: 50% 0; }
+.tm-contain-background-top-left { background-position: 0 0; }
+.tm-contain-background-top-right { background-position: 100% 0; }
+.tm-contain-background-center { background-position: 50% 50%; }
+.tm-contain-background-left { background-position: 0 50%; }
+.tm-contain-background-right { background-position: 100% 50%; }
+.tm-contain-background-bottom-center { background-position: 50% 100%; }
+.tm-contain-background-bottom-left { background-position: 0 100%; }
+.tm-contain-background-bottom-right { background-position: 100% 100%; }
+
+// Hide background images on small viewports
+@media (max-width: @breakpoint-small-max) {
+
+    .tm-background-hidden-small { background-image: none !important; }
+
+}
+
+// Hide background images on small to medium viewports
+@media (max-width: @breakpoint-medium-max) {
+
+    .tm-background-hidden-medium { background-image: none !important; }
+
+}
+
+//
+// Modifier 'tm-content-boxed'
+//
+
+.tm-content-boxed {
+    margin: @global-margin;
+    padding: @global-padding;
+    background: @global-background;
+    box-shadow: 0 3px 8px fade(@global-shadow, 10%);
+    color: @global-color !important;
+}
+
+@media (min-width: @breakpoint-large) {
+
+    .tm-content-boxed {
+        margin: @global-margin-large;
+        padding: @global-padding-large;
+    }
+
+}
+
+@media (min-width: @breakpoint-xlarge) {
+
+    .tm-content-boxed {
+        margin: @global-margin-xlarge;
+        padding: @global-padding-xlarge;
+    }
+
+}
+
+// Overlay content boxed shadows
+.uk-contrast-primary .tm-content-boxed { box-shadow: 0 3px 8px fade(@global-primary-shadow, 20%); }
+.uk-contrast .tm-content-boxed { box-shadow: 0 3px 8px fade(@global-secondary-shadow, 20%); }
+
+//
+// Horizontal address
+//
+
+.tm-address-horizontal .tm-label {
+    font-size: @theme-address-horizontal-label-font-size;
+    color: @theme-address-horizontal-label-color;
+}
+
+// Large screens
+@media (min-width: @breakpoint-xlarge) {
+
+    .tm-address-horizontal .tm-label {
+        width: @theme-address-horizontal-label-width;
+        float: left;
+        clear: both;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .tm-address-horizontal .tm-data { margin-left: @theme-address-horizontal-data-margin; }
+
+}
+
+// uk-contrast color
+.uk-contrast .tm-address-horizontal .tm-label { color: @global-secondary-highlight-color; }
+
+// uk-contrast-primary color
+.uk-contrast-primary .tm-address-horizontal .tm-label { color: @global-primary-highlight-color; }
+
+//
+// Dotnav Follower
+//
+
+// 'tm-dotnav' follower 'tm-dotnav-follower'
+.tm-dotnav-follower {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: @dotnav-width;
+    height: @dotnav-height;
+    margin: round((@dotnav-width / 2)) 0 0 round((@dotnav-width / 2));
+    padding: 0;
+    border-radius: round((@dotnav-width / 2));
+    background: @theme-dotnav-active-background;
+    transition: top .2s, height .2s;
+    z-index: -1;
+}
+
+// removing the active background from items
+.tm-dotnav > .uk-active > * { background: rgba(0,0,0,0); }
+
+//
+// Gallery modifier 'tm-card-gallery'
+//
+
+// Extend with .uk-grid-xlarge
+.tm-card-gallery.uk-grid { &:extend(.uk-grid-xlarge all); }
+
+// Adding a box-shadow
+.tm-card-gallery .uk-panel { box-shadow: 0 17px 25px -8px fade(@global-shadow, 60%); }
+.uk-contrast-primary .tm-card-gallery .uk-panel { box-shadow: 0 17px 25px -8px fade(@global-primary-shadow, 90%); }
+.uk-contrast .tm-card-gallery .uk-panel { box-shadow: 0 17px 25px -8px fade(@global-secondary-shadow, 90%); }
+
+//
+// Grid modifier 'tm-margin-condensed'
+// Reducing the margins of title and content of a widget item
+//
+
+.tm-margin-condensed {
+
+    h3 { margin-bottom: 0; }
+    h3 + .uk-margin { margin-top: 5px; }
+
+}
+
+//
+// Margin modifier 'tm-margin-xlarge'
+// Reducing the margins of title and content of a widget item
+//
+
+.tm-margin-xlarge { margin-bottom: @global-margin-xlarge; }
+* + .tm-margin-xlarge { margin-top: @global-margin-xlarge; }
+
+.tm-margin-xlarge-top { margin-top: @global-margin-xlarge !important; }
+.tm-margin-xlarge-bottom { margin-bottom: @global-margin-xlarge !important; }
+.tm-margin-xlarge-left { margin-left: @global-margin-xlarge !important; }
+.tm-margin-xlarge-right { margin-right: @global-margin-xlarge !important; }
+
+//
+// Blog Article
+//
+
+.tm-article-blog {
+
+    // Blog image large (not left or right aligned)
+    .tm-article-image-large { max-height: 360px; }
+
+    // Spacing to each other
+    + .tm-article-blog {
+        margin-top: @global-margin-large;
+        padding-top: @global-margin-large;
+    }
+
+    // Read more
+    .tm-article-button-link {
+        margin-right: @global-margin-small;
+        padding: 0;
+    }
+
+    // WordPress Only for post edit
+    .tm-button-edit { padding-left: 5px; }
+    .tm-button-edit::before {
+        content: '\e023';
+        font-family: @global-theme-icon-font-family;
+    }
+
+    // Icon for comment link
+    .tm-button-comment { padding-left: 10px; }
+    .tm-button-comment::before {
+        content: '\e076';
+        margin-right: 5px;
+        font-family: @global-theme-icon-font-family;
+    }
+
+}
+
+// Blog style on medium to large view ports
+@media (min-width: @breakpoint-medium) {
+
+    // Spacing to each other
+    .tm-article-blog + .tm-article-blog {
+        margin-top: @global-margin-xlarge;
+        padding-top: @global-margin-xlarge;
+    }
+
+}
+
+// Adding a different margin to 'uk-pagination'
+.uk-grid + .uk-pagination { margin-top: @global-margin-xlarge; }
+
+//
+// Helper class 'tm-block-z-index'
+// Increases the uk-block z-index + 1
+//
+
+.tm-block-z-index { z-index: (@block-z-index + 1); }
+
+
+// Widgetkit
+// ==========================================================================
+
+//
+// Dolce Vita Grid
+// Source: yoo_dolce-divta/widgetkit/widgets/grid_dolce-vita/
+// Class: tm-grid-dolce-vita
+//
+
+// Resetting the animation fill mode in the .uk-animation-' classes causing a z-index issue
+.tm-grid-dolce-vita [class*='uk-animation-'] {
+    -webkit-animation-fill-mode: none;
+    animation-fill-mode: none;
+}
+
+// Adding a border and gutter
+.tm-grid-divider > *:not(:first-child):not(.uk-row-first) { border-left: @grid-divider-border-width solid @grid-divider-border; }
+
+// Border color when uk-contrast is active
+.uk-contrast .tm-grid-divider > *:not(:first-child):not(.uk-row-first) { border-left-color: @global-secondary-border; }
+
+// Border color when uk-contrast-primary is active
+.uk-contrast-primary .tm-grid-divider > *:not(:first-child):not(.uk-row-first) { border-left-color: @global-primary-border; }
+
+// Badge
+.tm-grid-dolce-vita .uk-badge {
+    margin-right: 5px;
+    margin-bottom: 8px;
+}
+
+.tm-grid-dolce-vita .tm-badge-muted {
+    background: @global-light-background;
+    color: @global-highlight-color;
+}
+
+// badge style when uk-contrast is active
+.uk-contrast .tm-grid-dolce-vita .tm-badge-muted {
+    background: fade(@global-secondary-background, 10%);
+    color: @global-secondary-highlight-color;
+}
+
+// badge style when uk-contrast-primary is active
+.uk-contrast-primary .tm-grid-dolce-vita .tm-badge-muted {
+    background: fade(@global-primary-background, 10%);
+    color: @global-primary-highlight-color;
+}
+
+// Default gutter 'uk-grid'
+.tm-grid-divider:not(:empty) {
+    margin-left: -@grid-gutter-horizontal;
+    margin-right: -@grid-gutter-horizontal;
+}
+
+.tm-grid-divider > * {
+    padding-left: @grid-gutter-horizontal;
+    padding-right: @grid-gutter-horizontal;
+}
+
+// 'uk-grid-small'
+.uk-grid-small.tm-grid-divider:not(:empty) {
+    margin-left: -@grid-gutter-small-horizontal;
+    margin-right: -@grid-gutter-small-horizontal;
+}
+
+.uk-grid-small.tm-grid-divider > * {
+    padding-left: @grid-gutter-small-horizontal;
+    padding-right: @grid-gutter-small-horizontal;
+}
+
+// Medium to large screens only
+@media (min-width: @breakpoint-large) {
+
+    // 'uk-grid-large'
+    .uk-grid-large.tm-grid-divider:not(:empty) {
+        margin-left: -@grid-gutter-large-horizontal;
+        margin-right: -@grid-gutter-large-horizontal;
+    }
+
+    .uk-grid-large.tm-grid-divider > * {
+        padding-left: @grid-gutter-large-horizontal;
+        padding-right: @grid-gutter-large-horizontal;
+    }
+
+    // 'uk-grid-xlarge'
+    .uk-grid-xlarge.tm-grid-divider:not(:empty) {
+        margin-left: -@grid-gutter-xlarge-horizontal;
+        margin-right: -@grid-gutter-xlarge-horizontal;
+    }
+
+    .uk-grid-xlarge.tm-grid-divider > * {
+        padding-left: @grid-gutter-xlarge-horizontal;
+        padding-right: @grid-gutter-xlarge-horizontal;
+    }
+
+}
+
+// 'uk-grid-collapse'
+.uk-grid-collapse.tm-grid-divider:not(:empty) {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.uk-grid-collapse.tm-grid-divider > * {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+//
+// Dolce Vita Slider
+// Source: yoo_dolce-divta/widgetkit/widgets/slider_dolce-vita/
+// Class: tm-slider-dolce-vita
+//
+
+// Scaling before and after items
+.tm-slider-dolce-vita {
+
+    .uk-slide-after .uk-panel,
+    .uk-slide-before .uk-panel {
+        position: relative;
+        -webkit-transition: @global-transition;
+        transition: @global-transition;
+    }
+
+    // Item scaling options
+    .tm-scale-95 .uk-slide-after .uk-panel,
+    .tm-scale-95 .uk-slide-before .uk-panel {
+        -webkit-transform: scale(0.95);
+        transform: scale(0.95);
+    }
+
+    .tm-scale-90 .uk-slide-after .uk-panel,
+    .tm-scale-90 .uk-slide-before .uk-panel {
+        -webkit-transform: scale(0.9);
+        transform: scale(0.9);
+    }
+
+    .tm-scale-85 .uk-slide-after .uk-panel,
+    .tm-scale-85 .uk-slide-before .uk-panel {
+        -webkit-transform: scale(0.85);
+        transform: scale(0.85);
+    }
+
+    .tm-scale-80 .uk-slide-after .uk-panel,
+    .tm-scale-80 .uk-slide-before .uk-panel {
+        -webkit-transform: scale(0.8);
+        transform: scale(0.8);
+    }
+
+    .tm-scale-75 .uk-slide-after .uk-panel,
+    .tm-scale-75 .uk-slide-before .uk-panel {
+        -webkit-transform: scale(0.75);
+        transform: scale(0.75);
+    }
+
+    .tm-scale-70 .uk-slide-after .uk-panel,
+    .tm-scale-70 .uk-slide-before .uk-panel {
+        -webkit-transform: scale(0.7);
+        transform: scale(0.7);
+    }
+
+}
+
+// Adding 'uk-panel-box' shadow element
+.tm-slider-dolce-vita .uk-slider > li { padding-bottom: @global-padding-large; }
+.tm-slider-dolce-vita .uk-slider > li > .uk-panel { overflow: visible; }
+.tm-slider-dolce-vita .uk-slider > li > .uk-panel::after { opacity: 1; }
+.tm-slider-dolce-vita .uk-slider > li > .uk-panel:hover::after { bottom: -10px; }
+
+// Fixing flickering caused by the CSS transform scale
+.tm-slider-dolce-vita .uk-position-cover {
+    -webkit-filter: blur(0px);
+    filter: blur(0px);
+}
+
+// Overlay modifications
+.tm-slider-dolce-vita .uk-overlay-panel .uk-width-1-1 > .uk-bagde {
+    top: @overlay-panel-padding;
+    right: @overlay-panel-padding;
+}
+
+// Slidenav modifications
+.tm-slider-dolce-vita .uk-slidenav-previous { left: @global-grid-gutter-xlarge; }
+.tm-slider-dolce-vita .uk-slidenav-next { right: @global-grid-gutter-xlarge; }
+
+//
+// Dolce Vita Parallax
+// Source: yoo_dolce-divta/widgetkit/widgets/parallax_dolce-vita/
+// Class: tm-parallax-dolce-vita
+//
+
+// Heading style for 'tm-parallax-dolce-vita'
+.tm-parallax-dolce-vita .uk-heading-large { text-shadow: 0 3px 8px fade(@global-primary-shadow, 40%); }
+
+// Badge wrapper
+.tm-parallax-dolce-vita .tm-badge-vertical {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: round(@theme-frame-size-large + 30);
+}
+
+// Vertical Text for the badge element
+.tm-text-vertical {
+
+    display: inline-block;
+    overflow: hidden;
+    width: 1em;
+    color: @global-highlight-color;
+    font-size: @global-ui-font-size;
+    line-height: 1;
+
+     > div {
+         display: inline-block;
+         white-space: nowrap;
+         transform: translate(0,100%) rotate(-90deg);
+         transform-origin: 0 0;
+
+         &::after {
+             content: "";
+             float: left;
+             margin-top: 100%;
+         }
+
+     }
+
+}
+
+.uk-contrast .tm-text-vertical { color: @global-secondary-highlight-color; }
+
+// uk-contrast-primary color
+.uk-contrast-primary .tm-text-vertical { color: @global-primary-highlight-color; }
+
+// Loading the background image
+[data-uk-parallax*='bg:']:not([data-uk-parallax*='media:']) {
+     -webkit-transition: opacity .1s .2s, background-position 0.015s linear;
+     transition: opacity .1s .2s, background-position 0.015s linear;
+     opacity: 0;
+ }
+
+[data-uk-parallax*='bg:'][style*='background-position'] { opacity: 1; }
+
+//
+// Dolce Vita Gallery
+// Source: yoo_dolce-divta/widgetkit/widgets/gallery_dolce-vita/
+// Class: tm-gallery-dolce-vita
+//
+
+.tm-gallery-dolce-vita {
+
+    // Adding transitions
+    [class*='tm-overlay-blend-'],
+    .tm-overlay-background-opacity {
+        -webkit-transition: all 0.4s ease-in-out;
+        transition: all 0.4s ease-in-out;
+    }
+
+    // On Hover Overlay Options
+    .uk-overlay-hover:hover {
+
+        // Hover Blend Modes
+        .tm-overlay-blend-multiply { background-blend-mode: multiply; }
+        .tm-overlay-blend-screen { background-blend-mode: screen; }
+        .tm-overlay-blend-overlay { background-blend-mode: overlay; }
+        .tm-overlay-blend-darken { background-blend-mode: darken; }
+        .tm-overlay-blend-lighten { background-blend-mode: lighten; }
+        .tm-overlay-blend-color-dodge { background-blend-mode: color-dodge; }
+        .tm-overlay-blend-color-burn { background-blend-mode: color-burn; }
+        .tm-overlay-blend-hard-light { background-blend-mode: hard-light; }
+        .tm-overlay-blend-soft-light { background-blend-mode: soft-light; }
+        .tm-overlay-blend-difference { background-blend-mode: difference; }
+        .tm-overlay-blend-exclusion { background-blend-mode: exclusion; }
+        .tm-overlay-blend-hue { background-blend-mode: hue; }
+        .tm-overlay-blend-saturation { background-blend-mode: saturation; }
+        .tm-overlay-blend-color { background-blend-mode: color; }
+        .tm-overlay-blend-luminosity { background-blend-mode: luminosity; }
+
+        // Hover Opacity
+        .tm-overlay-opacity-90 { opacity: 0.1; }
+        .tm-overlay-opacity-80 { opacity: 0.2; }
+        .tm-overlay-opacity-70 { opacity: 0.3; }
+        .tm-overlay-opacity-60 { opacity: 0.4; }
+        .tm-overlay-opacity-50 { opacity: 0.5; }
+        .tm-overlay-opacity-40 { opacity: 0.6; }
+        .tm-overlay-opacity-30 { opacity: 0.7; }
+        .tm-overlay-opacity-20 { opacity: 0.8; }
+        .tm-overlay-opacity-10 { opacity: 0.9; }
+        .tm-overlay-opacity-100 { opacity: 1; }
+        .tm-overlay-opacity-none { opacity: 0; }
+
+    }
+
+    // Global Background
+    .tm-overlay-background-global,
+    .tm-overlay-background-global .tm-overlay-background-opacity { background-color: @global-background; }
+
+    // Adding a hover effect for the hover blend mode
+    .tm-overlay-background-global { &[class*='tm-overlay-blend-'] { background-color: @global-background; } }
+    .uk-overlay-hover:hover .tm-overlay-background-global { &[class*='tm-overlay-blend-'] { background-color: @global-dark-background; } }
+
+    // Primary Background
+    .tm-overlay-background-primary:extend(.uk-contrast-primary all),
+    .tm-overlay-background-primary .tm-overlay-background-opacity { background-color: @global-primary-background; }
+    .tm-overlay-background-primary .uk-overlay-panel { &:extend(.uk-contrast-primary all); }
+
+    // Adding a hover effect for the hover blend mode
+    .tm-overlay-background-primary { &[class*='tm-overlay-blend-'] { background-color: @global-primary-active-background; } }
+    .uk-overlay-hover:hover .tm-overlay-background-primary { &[class*='tm-overlay-blend-'] { background-color: @global-primary-background; } }
+
+    // Secondary Background
+    .tm-overlay-background-secondary,
+    .tm-overlay-background-secondary .tm-overlay-background-opacity { background-color: @global-secondary-background; }
+    .tm-overlay-background-secondary .uk-overlay-panel { &:extend(.uk-contrast all); }
+
+    // Adding a hover effect for the hover blend mode
+    .tm-overlay-background-secondary { &[class*='tm-overlay-blend-'] { background-color: @global-secondary-active-background; } }
+    .uk-overlay-hover:hover .tm-overlay-background-secondary { &[class*='tm-overlay-blend-'] { background-color: @global-secondary-background; } }
+
+    // Overlay content boxed
+    .tm-content-boxed {
+
+        margin: @global-margin-small;
+        padding: @global-padding-small;
+
+        // Headline
+        h3 {
+            margin: 0;
+            color: @global-highlight-color !important;
+        }
+
+        // Content
+        div.uk-margin-small { margin-top: 3px; }
+
+    }
+
+}
+
+
+// Misc
+// ==========================================================================
+
+// Dropdown stack Reset width if column width is set
+.uk-dropdown-navbar.uk-dropdown-stack {
+    min-width: 0 !important;
+    max-width: none !important;
+}
+
+// Leading article - Joomla Blog only
+.tm-leading-article .uk-article:last-child {
+    padding-bottom: @article-margin-top;
+    border-bottom: 1px solid @article-border;
+}
+
+// Internet Explorer 10+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+
+    // Known issue in IE 10 + 11 when display behaviour is set to flex and a min-height is given
+    .tm-footer-meta { height: @theme-footer-height; }
+
+}
+
+
+// Style modifications
+// ==========================================================================
+
+.body-style ();
+
+// Oro Style
+.body-style () when (@global-style = 'oro') {
+
+    // uk-contrast extension for tm-dotnav-follower
+    .tm-dotnav { &:extend(.uk-dotnav-contrast all); }
+
+    // Heading style for 'tm-parallax-dolce-vita'
+    .tm-parallax-dolce-vita .uk-heading-large {
+        color: @global-secondary-background;
+        text-shadow: 0 0 10px fade(@global-secondary-shadow, 10%);
+    }
+
+}
+
+// Signor Style
+.body-style () when (@global-style = 'signor') {
+
+    // Heading style for 'tm-parallax-dolce-vita'
+    .tm-parallax-dolce-vita .uk-heading-large { text-shadow: 0 3px 8px fade(@global-secondary-shadow, 80%); }
+
+}
+
+// Classico Style
+.body-style () when (@global-style = 'classico') {
+
+    // uk-contrast extension for tm-dotnav-follower
+    .tm-dotnav { &:extend(.uk-dotnav-contrast all); }
+
+    // Heading style for 'tm-parallax-dolce-vita'
+    .tm-parallax-dolce-vita .uk-heading-large {
+        padding: @global-padding-large;
+        border: 1px solid @global-secondary-highlight-color;
+        text-shadow: none;
+    }
+
+}
+
+// Facile Style
+.body-style () when (@global-style = 'facile') {
+
+    // Heading style for 'tm-parallax-dolce-vita'
+    .tm-parallax-dolce-vita .uk-heading-large { text-shadow: none; }
+
+}
+
+// Signora Style
+.body-style () when (@global-style = 'signora') {
+
+    // Heading style for 'tm-parallax-dolce-vita'
+    .tm-parallax-dolce-vita .uk-heading-large {
+        padding: @global-padding-large;
+        border: 10px solid @global-primary-border;
+        text-shadow: 0 3px 8px fade(@global-primary-shadow, 40%);
+        box-shadow: inset 3px 3px 12px fade(@global-primary-shadow, 30%), 3px 3px 12px fade(@global-primary-shadow, 30%);
+    }
+
+}

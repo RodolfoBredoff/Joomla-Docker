@@ -1,0 +1,77 @@
+// Copyright (C) YOOtheme GmbH, YOOtheme Proprietary Use License (http://www.yootheme.com/license) */
+
+//
+// Component: Block
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+@block-padding-vertical:                              @global-grid-gutter-large;
+@block-padding-vertical-large:                        @global-grid-gutter-xlarge;
+
+@block-large-padding-vertical:                        @block-padding-vertical;
+@block-large-padding-vertical-medium:                 @block-padding-vertical-large;
+@block-large-padding-vertical-large:                  round(@global-grid-gutter-xlarge * 2);
+
+@block-default-background:                            @global-background;
+@block-muted-background:                              @global-light-background;
+@block-primary-background:                            @global-primary-background;
+@block-secondary-background:                          @global-secondary-background;
+
+//
+// New
+//
+
+@block-border-width:                                  @global-border-width;
+@block-border:                                        @global-border;
+@block-muted-border:                                  darken(@block-muted-background, 5%);
+@block-primary-border:                                desaturate(darken(@block-primary-background, 5%), 5%);
+@block-secondary-border:                              lighten(@block-secondary-background, 4%);
+
+// Muted
+@block-muted-contrast-background:                     @global-background;
+@block-z-index:                                         1;
+
+
+// Component
+// ========================================================================
+
+.hook-block() { z-index: @block-z-index; }
+
+
+// Color modifier
+// ========================================================================
+
+.hook-block-default() {}
+
+.hook-block-muted() {
+
+    // uk-panel-box
+    .uk-panel-box:not(.uk-panel-box-primary):not(.uk-panel-box-secondary) { background: @block-muted-contrast-background; }
+
+}
+
+.hook-block-primary() {}
+
+
+// Miscellaneous
+// ========================================================================
+
+.hook-block-misc() {
+
+    // Adding a border when two blocks of the same style follow each other
+    .uk-block-default + .uk-block-default,
+    .uk-block-muted + .uk-block-muted,
+    .uk-block-primary + .uk-block-primary,
+    .uk-block-secondary + .uk-block-secondary { border-top: @block-border-width solid @block-border; }
+
+    .uk-block-muted + .uk-block-muted { border-color: @block-muted-border; }
+
+    .uk-block-primary + .uk-block-primary { border-color: @block-primary-border; }
+
+    .uk-block-secondary + .uk-block-secondary { border-color: @block-secondary-border; }
+
+}

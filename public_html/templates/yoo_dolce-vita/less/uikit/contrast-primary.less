@@ -1,0 +1,1180 @@
+// Copyright (C) YOOtheme GmbH, YOOtheme Proprietary Use License (http://www.yootheme.com/license) */
+
+//
+// Component: Contrast Primary
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+@contrast-primary-color:                                @global-primary-color;
+@contrast-primary-inverted-color:                       @global-primary-highlight-color;
+
+//
+// Components
+//
+
+@contrast-primary-base-color:                           @global-primary-color;
+
+@contrast-primary-base-link-color:                      @global-primary-link-color;
+@contrast-primary-base-link-text-decoration:            underline;
+@contrast-primary-base-link-hover-color:                @global-primary-link-hover-color;
+@contrast-primary-base-link-hover-text-decoration:      @global-link-hover-text-decoration;
+
+@contrast-primary-base-code-color:                      @global-primary-highlight-color;
+@contrast-primary-base-em-color:                        inherit;
+
+@contrast-primary-base-heading-color:                   @global-primary-highlight-color;
+
+@contrast-primary-base-hr-border:                       @global-primary-border;
+
+@contrast-primary-nav-side-color:                       @global-primary-color;
+@contrast-primary-nav-side-hover-background:            rgba(0,0,0,0);
+@contrast-primary-nav-side-hover-color:                 @global-primary-muted-color;
+@contrast-primary-nav-side-active-background:           @global-secondary-background;
+@contrast-primary-nav-side-active-color:                @global-primary-background;
+@contrast-primary-nav-side-header-color:                @global-primary-muted-color;
+@contrast-primary-nav-side-divider-border:              @global-primary-border;
+@contrast-primary-nav-side-nested-color:                @global-primary-color;
+@contrast-primary-nav-side-nested-hover-color:          @global-primary-muted-color;
+
+@contrast-primary-subnav-color:                         fade(@global-primary-color, 70%);
+@contrast-primary-subnav-hover-color:                   @global-primary-highlight-color;
+@contrast-primary-subnav-hover-text-decoration:         none;
+@contrast-primary-subnav-active-color:                  @global-primary-highlight-color;
+
+@contrast-primary-subnav-line-border:                   @global-primary-border;
+
+@contrast-primary-subnav-pill-hover-background:         rgba(0,0,0,0);
+@contrast-primary-subnav-pill-hover-color:              @global-primary-color;
+@contrast-primary-subnav-pill-active-background:        rgba(0,0,0,0);
+@contrast-primary-subnav-pill-active-color:             @global-primary-highlight-color;
+
+@contrast-primary-tab-border:                           @global-primary-border;
+@contrast-primary-tab-color:                            @global-primary-color;
+@contrast-primary-tab-hover-border:                     @global-primary-hover-border;
+@contrast-primary-tab-hover-background:                 rgba(0,0,0,0);
+@contrast-primary-tab-hover-color:                      @global-primary-highlight-color;
+@contrast-primary-tab-active-border:                    @global-primary-highlight-color;
+@contrast-primary-tab-active-background:                rgba(0,0,0,0);
+@contrast-primary-tab-active-color:                     @global-primary-highlight-color;
+
+@contrast-primary-list-line-border:                     @global-primary-border;
+
+@contrast-primary-form-border:                          @global-primary-color;
+@contrast-primary-form-background:                      rgba(0,0,0,0);
+@contrast-primary-form-color:                           @global-primary-color;
+@contrast-primary-form-focus-border:                    @global-primary-highlight-color;
+@contrast-primary-form-focus-background:                rgba(0,0,0,0);
+@contrast-primary-form-focus-color:                     @global-primary-highlight-color;
+
+@contrast-primary-form-placeholder-color:               @global-primary-color;
+
+@contrast-primary-button-background:                    @global-primary-contrast-background;
+@contrast-primary-button-color:                         @global-primary-background;
+@contrast-primary-button-hover-background:              fade(@global-primary-contrast-background, 85%);
+@contrast-primary-button-hover-color:                   @global-primary-background;
+@contrast-primary-button-active-background:             @contrast-primary-button-hover-background;
+@contrast-primary-button-active-color:                  @contrast-primary-button-hover-color;
+
+@contrast-primary-button-primary-background:            @global-primary-hover-background;
+@contrast-primary-button-primary-color:                 @global-primary-highlight-color;
+@contrast-primary-button-primary-hover-background:      @global-primary-active-background;
+@contrast-primary-button-primary-hover-color:           darken(@global-primary-background, 40%);
+@contrast-primary-button-primary-active-background:     @global-primary-highlight-color;
+@contrast-primary-button-primary-active-color:          @global-primary-background;
+
+@contrast-primary-icon-button-background:               rgba(0,0,0,0);
+@contrast-primary-icon-button-color:                    @global-primary-color;
+@contrast-primary-icon-button-hover-background:         rgba(0,0,0,0);
+@contrast-primary-icon-button-hover-color:              @global-primary-highlight-color;
+@contrast-primary-icon-button-active-background:        @global-primary-highlight-color;
+@contrast-primary-icon-button-active-color:             @global-primary-background;
+
+@contrast-primary-icon-hover-color:                     @global-primary-muted-color;
+@contrast-primary-icon-hover-hover-color:               @global-primary-highlight-color;
+
+@contrast-primary-text-muted-color:                     @global-primary-muted-color;
+@contrast-primary-text-primary-color:                   @global-primary-highlight-color;
+
+//
+// New
+//
+
+@contrast-primary-base-ins-background:                  @global-primary-hover-background;
+@contrast-primary-base-ins-color:                       @contrast-primary-text-success-color;
+@contrast-primary-base-mark-background:                 @global-primary-hover-background;
+@contrast-primary-base-mark-color:                      @contrast-primary-text-warning-color;
+
+@contrast-primary-text-success-color:                   darken(@global-success-color, 20%);
+@contrast-primary-text-warning-color:                   darken(@global-warning-color, 20%);
+@contrast-primary-text-danger-color:                    darken(@global-danger-color, 20%);
+
+@contrast-primary-badge-background:                     @global-primary-contrast-background;
+@contrast-primary-badge-color:                          @global-primary-background;
+
+@contrast-primary-panel-box-border:                     @contrast-primary-panel-box-background;
+@contrast-primary-panel-box-background:                 @global-primary-contrast-background;
+@contrast-primary-panel-box-hover-background:           lighten(@contrast-primary-panel-box-background, 3%);
+@contrast-primary-panel-box-color:                      @global-primary-background;
+@contrast-primary-panel-box-title-color:                @contrast-primary-panel-box-color;
+@contrast-primary-panel-box-link-color:                 @global-primary-link-color;
+@contrast-primary-panel-box-link-hover-color:           @global-primary-link-hover-color;
+@contrast-primary-panel-box-hover-box-shadow:           none;
+@contrast-primary-panel-box-button-background:          @global-primary-background;
+@contrast-primary-panel-box-button-color:               @contrast-primary-panel-box-background;
+@contrast-primary-panel-box-badge-background:           @contrast-primary-panel-box-button-background;
+@contrast-primary-panel-box-badge-color:                @contrast-primary-panel-box-button-color;
+
+@contrast-primary-panel-hover-color:                    @contrast-primary-panel-box-color;
+@contrast-primary-panel-hover-title-color:              @contrast-primary-panel-box-title-color;
+@contrast-primary-panel-hover-hover-color:              @contrast-primary-panel-box-title-color;
+@contrast-primary-panel-hover-hover-background:         @contrast-primary-panel-box-hover-background;
+@contrast-primary-panel-hover-border:                   @contrast-primary-panel-box-background;
+@contrast-primary-panel-hover-background:               @contrast-primary-panel-box-background;
+@contrast-primary-panel-hover-hover-box-shadow:         0 15px 45px fade(@global-primary-shadow, 20%), 0 3px 10px fade(@global-primary-shadow, 20%);
+
+@contrast-primary-panel-box-shadow:                     @global-primary-shadow;
+
+@contrast-primary-subnav-onclick-color:                 @global-primary-highlight-color;
+@contrast-primary-subnav-disabled-color:                @global-primary-muted-color;
+
+@contrast-primary-subnav-pill-border:                   rgba(0,0,0,0);
+@contrast-primary-subnav-pill-hover-border:             @global-primary-border;
+@contrast-primary-subnav-pill-active-border:            @global-secondary-background;
+@contrast-primary-subnav-pill-onclick-border:           @global-primary-hover-border;
+@contrast-primary-subnav-pill-onclick-background:       rgba(0,0,0,0);
+@contrast-primary-subnav-pill-onclick-color:            @global-primary-color;
+
+@contrast-primary-button-link-color:                    @global-primary-highlight-color;
+@contrast-primary-button-link-hover-color:              fade(@contrast-primary-button-link-color, 85%);
+@contrast-primary-button-link-active-color:             @contrast-primary-button-link-hover-color;
+@contrast-primary-button-link-hover-text-decoration:    @contrast-primary-base-link-hover-text-decoration;
+
+@contrast-primary-button-disabled-background:           fade(@contrast-primary-button-background, 5%);
+@contrast-primary-button-disabled-color:                @global-primary-muted-color;
+
+@contrast-primary-icon-button-border:                   @global-primary-border;
+@contrast-primary-icon-button-hover-border:             @global-primary-highlight-color;
+@contrast-primary-icon-button-active-border:            @global-primary-highlight-color;
+
+@contrast-primary-form-legend-color:                    @global-primary-highlight-color;
+
+@contrast-primary-form-danger-border:                   @global-primary-active-background;
+@contrast-primary-form-danger-background:               rgba(0,0,0,0);
+@contrast-primary-form-danger-color:                    @global-primary-highlight-color;
+
+@contrast-primary-form-success-border:                  @global-primary-active-background;
+@contrast-primary-form-success-background:              rgba(0,0,0,0);
+@contrast-primary-form-success-color:                   @global-primary-highlight-color;
+
+@contrast-primary-dropdown-background:                  @global-primary-contrast-background;
+@contrast-primary-dropdown-color:                       @global-primary-background;
+
+@contrast-primary-nav-dropdown-color:                   @global-primary-background;
+@contrast-primary-nav-dropdown-hover-background:        rgba(0,0,0,0);
+@contrast-primary-nav-dropdown-hover-color:             fade(@global-primary-background, 80%);
+@contrast-primary-nav-dropdown-active-background:       rgba(0,0,0,0);
+@contrast-primary-nav-dropdown-active-color:            @global-primary-background;
+@contrast-primary-nav-dropdown-header-color:            fade(@global-primary-background, 80%);
+@contrast-primary-nav-dropdown-divider-border:          fade(@global-primary-background, 20%);
+@contrast-primary-nav-dropdown-nested-color:            @global-primary-background;
+@contrast-primary-nav-dropdown-nested-hover-color:      fade(@global-primary-background, 80%);
+
+@contrast-primary-panel-box-nav-side-color:              @global-primary-background;
+@contrast-primary-panel-box-nav-side-hover-background:   rgba(0,0,0,0);
+@contrast-primary-panel-box-nav-side-hover-color:        fade(@global-primary-background, 80%);
+@contrast-primary-panel-box-nav-side-active-background:  fade(@global-primary-background, 5%);
+@contrast-primary-panel-box-nav-side-active-color:       @global-primary-background;
+@contrast-primary-panel-box-nav-side-header-color:       fade(@global-primary-background, 80%);
+@contrast-primary-panel-box-nav-side-divider-border:     fade(@global-primary-background, 20%);
+@contrast-primary-panel-box-nav-side-nested-color:       @global-primary-background;
+@contrast-primary-panel-box-nav-side-nested-hover-color: fade(@global-primary-background, 80%);
+
+@contrast-primary-accordion-title-color:                @global-primary-color;
+@contrast-primary-accordion-title-hover-color:          @global-primary-highlight-color;
+@contrast-primary-accordion-title-onclick-color:        @global-primary-color;
+@contrast-primary-accordion-title-active-color:         @global-primary-highlight-color;
+
+@contrast-primary-progress-background:                  @global-primary-hover-background;
+@contrast-primary-progress-bar-background:              @global-secondary-background;
+@contrast-primary-progress-bar-color:                   @global-primary-background;
+
+@contrast-primary-alert-background:                     @global-primary-hover-background;
+@contrast-primary-alert-color:                          @global-primary-highlight-color;
+
+@contrast-primary-thumbnail-border:                     @global-primary-border;
+@contrast-primary-thumbnail-background:                 @global-primary-hover-background;
+@contrast-primary-thumbnail-hover-border:               @contrast-primary-thumbnail-border;
+@contrast-primary-thumbnail-hover-background:           @global-primary-hover-background;
+@contrast-primary-thumbnail-caption-color:              @global-primary-color;
+@contrast-primary-thumbnail-active-border:              @global-primary-border;
+@contrast-primary-thumbnail-active-background:          @global-primary-contrast-background;
+@contrast-primary-thumbnail-active-color:               @global-primary-background;
+@contrast-primary-thumbnail-box-shadow:                 0 0 0 rgba(0,0,0,0);
+@contrast-primary-thumbnail-hover-box-shadow:           0 15px 45px fade(@global-primary-shadow, 20%), 0 3px 10px fade(@global-primary-shadow, 20%);
+@contrast-primary-thumbnail-shadow:                     @global-primary-shadow;
+
+@contrast-primary-text-shadow:                          none;
+
+//
+// Special styles
+// not inlcuded in uk-contrast component!
+//
+
+@contrast-primary-overlay-panel-background:             @overlay-panel-background;
+@contrast-primary-overlay-panel-color:                  @overlay-panel-color;
+@contrast-primary-overlay-icon-color:                   @overlay-icon-color;
+@contrast-primary-overlay-badge-color:                  @global-primary-background;
+
+
+// Component: Contrast Primary
+// ========================================================================
+
+.uk-contrast-primary {
+
+    color: @contrast-primary-base-color;
+
+    // Base
+    // ========================================================================
+
+    //
+    // Link
+    //
+
+    a:not([class]),
+    .uk-link  {
+        color: @contrast-primary-base-link-color;
+        text-decoration: @contrast-primary-base-link-text-decoration;
+    }
+
+    a:not([class]):hover,
+    .uk-link:hover {
+        color: @contrast-primary-base-link-hover-color;
+        text-decoration: @contrast-primary-base-link-hover-text-decoration;
+    }
+
+    //
+    // Code
+    //
+
+    :not(pre) > code,
+    :not(pre) > kbd,
+    :not(pre) > samp {
+        color: @contrast-primary-base-code-color;
+        .hook-contrast-primary-base-code;
+    }
+
+    //
+    // Emphasize
+    //
+
+    em { color: @contrast-primary-base-em-color; }
+
+    //
+    // Headings
+    //
+
+    h1, h2, h3, h4, h5, h6 { color: @contrast-primary-base-heading-color; }
+
+    //
+    // Horizontal rules
+    //
+
+    hr { border-top-color: @contrast-primary-base-hr-border; }
+
+
+    // Nav
+    // ========================================================================
+
+    .uk-nav li > a,
+    .uk-nav li > a:hover { text-decoration: none; }
+
+    //
+    // Nav Site
+    //
+
+    .uk-nav-side > li > a {
+        color: @contrast-primary-nav-side-color;
+        .hook-contrast-primary-nav-side;
+    }
+
+    .uk-nav-side > li > a:hover,
+    .uk-nav-side > li > a:focus {
+        background: @contrast-primary-nav-side-hover-background;
+        color: @contrast-primary-nav-side-hover-color;
+        .hook-contrast-primary-nav-side-hover;
+    }
+
+    .uk-nav-side > li.uk-active > a {
+        background: @contrast-primary-nav-side-active-background;
+        color: @contrast-primary-nav-side-active-color;
+        .hook-contrast-primary-nav-side-active;
+    }
+
+    // Nav header
+    .uk-nav-side .uk-nav-header {
+        color: @contrast-primary-nav-side-header-color;
+        .hook-contrast-primary-nav-side-header;
+    }
+
+    // Nav divider
+    .uk-nav-side .uk-nav-divider {
+        border-top-color: @contrast-primary-nav-side-divider-border;
+        .hook-contrast-primary-nav-side-divider;
+    }
+
+    // Nested items
+    .uk-nav-side ul a { color: @contrast-primary-nav-side-nested-color; }
+    .uk-nav-side ul a:hover { color: @contrast-primary-nav-side-nested-hover-color; }
+
+
+    // Subnav
+    // ========================================================================
+
+    .uk-subnav > * > a {
+        color: @contrast-primary-subnav-color;
+        text-decoration: none;
+        .hook-contrast-primary-subnav;
+    }
+
+    .uk-subnav > * > a:hover,
+    .uk-subnav > * > a:focus {
+        color: @contrast-primary-subnav-hover-color;
+        text-decoration: @contrast-primary-subnav-hover-text-decoration;
+        .hook-contrast-primary-subnav-hover;
+    }
+
+    .uk-subnav > .uk-active > a {
+        color: @contrast-primary-subnav-active-color;
+        .hook-contrast-primary-subnav-active;
+    }
+
+    //
+    // Subnav line
+    //
+
+    .uk-subnav-line > :nth-child(n+2):before {
+        border-left-color: @contrast-primary-subnav-line-border;
+        .hook-contrast-primary-subnav-line-divider;
+    }
+
+    //
+    // Subnav pill
+    //
+
+    .uk-subnav-pill > * > a:hover,
+    .uk-subnav-pill > * > a:focus {
+        background: @contrast-primary-subnav-pill-hover-background;
+        color: @contrast-primary-subnav-pill-hover-color;
+        text-decoration: none;
+        .hook-contrast-primary-subnav-pill-hover;
+    }
+
+    .uk-subnav-pill > .uk-active > a {
+        background: @contrast-primary-subnav-pill-active-background;
+        color: @contrast-primary-subnav-pill-active-color;
+        .hook-contrast-primary-subnav-pill-active;
+    }
+
+
+    // Tab
+    // ========================================================================
+
+    .uk-tab { border-bottom-color: @contrast-primary-tab-border; }
+
+    .uk-tab > li > a {
+        border-color: transparent;
+        color: @contrast-primary-tab-color;
+        .hook-contrast-primary-tab;
+    }
+
+    .uk-tab > li > a:hover,
+    .uk-tab > li > a:focus,
+    .uk-tab > li.uk-open > a {
+        border-color: @contrast-primary-tab-hover-border;
+        background: @contrast-primary-tab-hover-background;
+        color: @contrast-primary-tab-hover-color;
+        text-decoration: none;
+        .hook-contrast-primary-tab-hover;
+    }
+
+    /* Active */
+    .uk-tab > li.uk-active > a {
+        border-color: @contrast-primary-tab-active-border;
+        border-bottom-color: transparent;
+        background: @contrast-primary-tab-active-background;
+        color: @contrast-primary-tab-active-color;
+        .hook-contrast-primary-tab-active;
+    }
+
+    //
+    // Tab center
+    //
+
+    .uk-tab-center { border-bottom-color: @contrast-primary-tab-border; }
+
+    //
+    // Tab grid
+    //
+
+    .uk-tab-grid:before { border-top-color: @contrast-primary-tab-border; }
+
+
+    // List
+    // ========================================================================
+
+    .uk-list-line > li:nth-child(n+2) {
+        border-top-color: @contrast-primary-list-line-border;
+        .hook-contrast-primary-list-line;
+    }
+
+
+    // Form
+    // ========================================================================
+
+    .uk-form select,
+    .uk-form textarea,
+    .uk-form input:not([type]),
+    .uk-form input[type="text"],
+    .uk-form input[type="password"],
+    .uk-form input[type="datetime"],
+    .uk-form input[type="datetime-local"],
+    .uk-form input[type="date"],
+    .uk-form input[type="month"],
+    .uk-form input[type="time"],
+    .uk-form input[type="week"],
+    .uk-form input[type="number"],
+    .uk-form input[type="email"],
+    .uk-form input[type="url"],
+    .uk-form input[type="search"],
+    .uk-form input[type="tel"],
+    .uk-form input[type="color"] {
+        border-color: @contrast-primary-form-border;
+        background: @contrast-primary-form-background;
+        color: @contrast-primary-form-color;
+        background-clip: padding-box;
+        .hook-contrast-primary-form;
+
+        &:focus {
+            border-color: @contrast-primary-form-focus-border;
+            background: @contrast-primary-form-focus-background;
+            color: @contrast-primary-form-focus-color;
+            .hook-contrast-primary-form-focus;
+        }
+    }
+
+    //
+    // Placeholder
+    //
+
+    .uk-form :-ms-input-placeholder { color: @contrast-primary-form-placeholder-color !important; }
+    .uk-form ::-moz-placeholder { color: @contrast-primary-form-placeholder-color; }
+    .uk-form ::-webkit-input-placeholder { color: @contrast-primary-form-placeholder-color; }
+
+
+    // Button
+    // ========================================================================
+
+    .uk-button {
+        color: @contrast-primary-button-color;
+        background: @contrast-primary-button-background;
+        .hook-contrast-primary-button;
+    }
+
+    .uk-button:hover,
+    .uk-button:focus {
+        background-color: @contrast-primary-button-hover-background;
+        color: @contrast-primary-button-hover-color;
+        .hook-contrast-primary-button-hover;
+    }
+
+    .uk-button:active,
+    .uk-button.uk-active {
+        background-color: @contrast-primary-button-active-background;
+        color: @contrast-primary-button-active-color;
+        .hook-contrast-primary-button-active;
+    }
+
+    //
+    // Button primary
+    //
+
+    .uk-button-primary {
+        background-color: @contrast-primary-button-primary-background;
+        color: @contrast-primary-button-primary-color;
+        .hook-contrast-primary-button-primary;
+    }
+
+    .uk-button-primary:hover,
+    .uk-button-primary:focus {
+        background-color: @contrast-primary-button-primary-hover-background;
+        color: @contrast-primary-button-primary-hover-color;
+        .hook-contrast-primary-button-primary-hover;
+    }
+
+    .uk-button-primary:active,
+    .uk-button-primary.uk-active {
+        background-color: @contrast-primary-button-primary-active-background;
+        color: @contrast-primary-button-primary-active-color;
+        .hook-contrast-primary-button-primary-active;
+    }
+
+
+    // Icon
+    // ========================================================================
+
+    //
+    // Icon hover
+    //
+
+    .uk-icon-hover {
+        color: @contrast-primary-icon-hover-color;
+        .hook-contrast-primary-icon-hover;
+    }
+
+    .uk-icon-hover:hover {
+        color: @contrast-primary-icon-hover-hover-color;
+        .hook-contrast-primary-icon-hover-hover;
+    }
+
+    //
+    // Icon button
+    //
+
+    .uk-icon-button {
+        background: @contrast-primary-icon-button-background;
+        color: @contrast-primary-icon-button-color;
+        .hook-contrast-primary-icon-button;
+    }
+
+    .uk-icon-button:hover,
+    .uk-icon-button:focus {
+        background-color: @contrast-primary-icon-button-hover-background;
+        color: @contrast-primary-icon-button-hover-color;
+        .hook-contrast-primary-icon-button-hover;
+    }
+
+    .uk-icon-button:active {
+        background-color: @contrast-primary-icon-button-active-background;
+        color: @contrast-primary-icon-button-active-color;
+        .hook-contrast-primary-icon-button-active;
+    }
+
+
+    // Text
+    // ========================================================================
+
+    .uk-text-muted { color: @contrast-primary-text-muted-color !important; }
+    .uk-text-primary { color: @contrast-primary-text-primary-color !important; }
+
+
+    // Misc hook
+    // ========================================================================
+
+    .hook-contrast-primary-misc;
+
+}
+
+
+// Base
+// ========================================================================
+
+.hook-contrast-primary-base-code() {}
+
+
+// Nav
+// ========================================================================
+
+.hook-contrast-primary-nav-side() {}
+.hook-contrast-primary-nav-side-hover() {}
+.hook-contrast-primary-nav-side-active() {}
+.hook-contrast-primary-nav-side-header() {}
+.hook-contrast-primary-nav-side-divider() {}
+
+
+// Subnav
+// ========================================================================
+
+.hook-contrast-primary-subnav() {}
+.hook-contrast-primary-subnav-hover() {}
+.hook-contrast-primary-subnav-active() {}
+.hook-contrast-primary-subnav-line-divider() {}
+.hook-contrast-primary-subnav-pill-hover() { border-color: @contrast-primary-subnav-pill-hover-border; }
+.hook-contrast-primary-subnav-pill-active() { border-color: @contrast-primary-subnav-pill-active-border; }
+
+// Tab
+// ========================================================================
+
+.hook-contrast-primary-tab() {
+
+    text-decoration: none;
+
+    &::after { border-bottom-color: @contrast-primary-tab-hover-border; }
+
+}
+.hook-contrast-primary-tab-hover() {}
+.hook-contrast-primary-tab-active() {
+
+    &::after { border-bottom-color: @contrast-primary-tab-active-border; }
+
+}
+
+
+// List
+// ========================================================================
+
+.hook-contrast-primary-list-line() {}
+
+
+// Form
+// ========================================================================
+
+.hook-contrast-primary-form() {}
+.hook-contrast-primary-form-focus() {}
+
+
+// Button
+// ========================================================================
+
+.hook-contrast-primary-button() {}
+.hook-contrast-primary-button-hover() {}
+.hook-contrast-primary-button-active() { box-shadow: none; }
+.hook-contrast-primary-button-primary() {}
+.hook-contrast-primary-button-primary-hover() {}
+.hook-contrast-primary-button-primary-active() { box-shadow: none; }
+
+
+// Icon
+// ========================================================================
+
+.hook-contrast-primary-icon-hover() {}
+.hook-contrast-primary-icon-hover-hover() {}
+.hook-contrast-primary-icon-button() { border-color: @contrast-primary-icon-button-border; }
+.hook-contrast-primary-icon-button-hover() { border-color: @contrast-primary-icon-button-hover-border; }
+.hook-contrast-primary-icon-button-active() { border-color: @contrast-primary-icon-button-active-border; }
+
+.hook-contrast-primary-misc() {
+
+    text-shadow: @contrast-primary-text-shadow;
+
+    // Accordion
+    // ========================================================================
+
+    .uk-accordion-title,
+    .uk-accordion-title::before { color: @contrast-primary-accordion-title-color; }
+
+    .uk-accordion-title:hover,
+    .uk-accordion-title:hover::before { color: @contrast-primary-accordion-title-hover-color; }
+
+    .uk-accordion-title:active,
+    .uk-accordion-title:active::before { color: @contrast-primary-accordion-title-onclick-color; }
+
+    .uk-accordion-title.uk-active,
+    .uk-accordion-title.uk-active::before { color: @contrast-primary-accordion-title-active-color; }
+
+
+    // Alert
+    // ========================================================================
+
+    .uk-alert,
+    [class*='uk-alert-'] {
+        background: @contrast-primary-alert-background;
+        color: @contrast-primary-alert-color;
+    }
+
+
+    // Article
+    // ========================================================================
+
+    .uk-article-lead { color: @global-primary-muted-color; }
+
+    .uk-article-meta { color: @global-primary-muted-color; }
+
+
+    // Badge
+    // ========================================================================
+
+    .uk-badge {
+        background: @contrast-primary-badge-background;
+        color: @contrast-primary-badge-color;
+    }
+
+
+    // Base
+    // ========================================================================
+
+    ins {
+        background: @contrast-primary-base-ins-background;
+        color: @contrast-primary-base-ins-color;
+    }
+
+    mark {
+        background: @contrast-primary-base-mark-background;
+        color: @contrast-primary-base-mark-color;
+    }
+
+    pre {
+        border-color: @global-primary-border;
+        background-color: @global-primary-background;
+        color: @global-primary-color;
+    }
+
+    blockquote { color: @global-primary-highlight-color; }
+    blockquote::before { color: @global-primary-highlight-color; }
+    blockquote small,
+    blockquote cite { color: @global-primary-muted-color; }
+
+
+    // Breadcrumb
+    // ========================================================================
+
+    .uk-breadcrumb > li > a {
+        color: @global-primary-color;
+        text-decoration: none;
+    }
+    .uk-breadcrumb > li > a:hover { color: @global-primary-link-hover-color; }
+    .uk-breadcrumb > li.uk-active > * { color: @global-primary-highlight-color; }
+    .uk-breadcrumb > li:not(.uk-active) > span { color: @global-primary-muted-color; }
+    .uk-breadcrumb > li:nth-child(n+2)::before { color: fade(@global-primary-muted-color, 30%); }
+
+
+    // Button
+    // ========================================================================
+
+    // Button Link
+    .uk-button-link,
+    .uk-button-link:hover,
+    .uk-button-link:active,
+    .uk-button-link:focus {
+        background: none;
+        box-shadow: none;
+        outline: none;
+        text-decoration: none;
+    }
+
+    .uk-button-link { color: @contrast-primary-button-link-color; }
+
+    .uk-button-link:hover,
+    .uk-button-link:focus {
+        color: @contrast-primary-button-link-hover-color;
+        text-decoration: @contrast-primary-button-link-hover-text-decoration;
+    }
+
+    .uk-button-link:active,
+    .uk-button-link.uk-active { color: @contrast-primary-button-link-active-color; }
+
+    // Button Disabled
+    .uk-button:disabled,
+    .uk-button:disabled:hover {
+        background-color: @contrast-primary-button-disabled-background;
+        color: @contrast-primary-button-disabled-color;
+    }
+
+
+    // Comment
+    // ========================================================================
+
+    .uk-comment-header {
+        border-color: @global-primary-border;
+        background: rgba(0,0,0,0);
+        box-shadow: none;
+    }
+
+    .uk-comment-meta { color: @global-primary-muted-color !important; }
+
+
+    // Description List
+    // ========================================================================
+
+    .uk-description-list-line > dt:nth-child(n+2) { border-top-color: @global-primary-border; }
+
+    // Term color
+    .uk-description-list-horizontal > dt,
+    .uk-description-list-line > dt { color: @global-primary-highlight-color; }
+
+
+    // Dropdown
+    // ========================================================================
+
+    .uk-dropdown {
+        background: @contrast-primary-dropdown-background;
+        color: @contrast-primary-dropdown-color;
+    }
+
+
+    // Form
+    // ========================================================================
+
+    .uk-form legend { color: @contrast-primary-form-legend-color; }
+
+    .uk-form legend::after { border-bottom-color: @global-primary-border; }
+
+    .uk-form-danger {
+        border-color: @contrast-primary-form-danger-border !important;
+        background: @contrast-primary-form-danger-background !important;
+        color: @contrast-primary-form-danger-color !important;
+    }
+
+    .uk-form-success {
+        border-color: @contrast-primary-form-success-border !important;
+        background: @contrast-primary-form-success-background !important;
+        color: @contrast-primary-form-success-color !important;
+    }
+
+    // Reseting -webkit- autofill styling in Chrome browser
+    .uk-form input:-webkit-autofill {
+        box-shadow: 0 0 0px @form-height @global-primary-background inset !important;
+        border-color: @global-primary-border !important;
+        color: @global-primary-muted-color !important;
+        -webkit-text-fill-color: @global-primary-muted-color;
+    }
+
+    .uk-form input:-webkit-autofill:focus {
+        border-color: @global-primary-highlight-color !important;
+        color: @global-primary-highlight-color !important;
+        -webkit-text-fill-color: @global-primary-highlight-color;
+    }
+
+
+    // Form Advanced
+    // ========================================================================
+
+    // Label
+    .uk-form-label { color: @global-primary-highlight-color; }
+
+    .uk-form input[type="radio"],
+    .uk-form input[type="checkbox"] {
+        border-color: @global-primary-border;
+        background: @global-primary-background;
+    }
+
+    .uk-form input[type=radio]:checked:before { background: @global-primary-highlight-color; }
+
+    .uk-form input[type=checkbox]:checked:before,
+    .uk-form input[type=checkbox]:indeterminate:before { color: @global-primary-highlight-color; }
+
+    .uk-form input[type=radio]:disabled,
+    .uk-form input[type=checkbox]:disabled { border-color: @global-primary-border; }
+
+    .uk-form input[type=radio]:disabled:checked:before { background-color: @global-primary-contrast-background; }
+    .uk-form input[type=checkbox]:disabled:checked:before,
+    .uk-form input[type=checkbox]:disabled:indeterminate:before { color: @global-primary-contrast-background; }
+
+    .uk-form input[type="radio"]:checked:not(:disabled),
+    .uk-form input[type="checkbox"]:checked:not(:disabled) {
+        border-color: @global-primary-highlight-color;
+        box-shadow: inset 0 0 0 1px @global-primary-highlight-color;
+    }
+
+
+    // Grid
+    // ========================================================================
+
+    // Grid Divider
+    .uk-grid-divider > [class*='uk-width-1-']:not(.uk-width-1-1):nth-child(n+2),
+    .uk-grid-divider > [class*='uk-width-2-']:nth-child(n+2),
+    .uk-grid-divider > [class*='uk-width-3-']:nth-child(n+2),
+    .uk-grid-divider > [class*='uk-width-4-']:nth-child(n+2),
+    .uk-grid-divider > [class*='uk-width-5-']:nth-child(n+2),
+    .uk-grid-divider > [class*='uk-width-6-']:nth-child(n+2),
+    .uk-grid-divider > [class*='uk-width-7-']:nth-child(n+2),
+    .uk-grid-divider > [class*='uk-width-8-']:nth-child(n+2),
+    .uk-grid-divider > [class*='uk-width-9-']:nth-child(n+2) { border-left-color: @global-primary-border; }
+
+    @media (min-width: @breakpoint-medium) {
+
+        .uk-grid-divider > [class*='uk-width-medium-']:not(.uk-width-medium-1-1):nth-child(n+2) { border-left-color: @global-primary-border; }
+
+    }
+
+    @media (min-width: @breakpoint-large) {
+
+        .uk-grid-divider > [class*='uk-width-large-']:not(.uk-width-large-1-1):nth-child(n+2) { border-left-color: @global-primary-border; }
+
+    }
+
+    .uk-grid-divider:empty { border-top-color: @global-primary-border; }
+
+
+    // List
+    // ========================================================================
+
+    .uk-list-striped > li:nth-of-type(odd) { background: @global-primary-contrast-background; }
+
+
+    // Nav Dropdown
+    // ========================================================================
+
+    .uk-nav-dropdown > li > a { color: @contrast-primary-nav-dropdown-color; }
+
+    .uk-nav-dropdown > li > a:hover,
+    .uk-nav-dropdown > li > a:focus {
+        background: @contrast-primary-nav-dropdown-hover-background;
+        color: @contrast-primary-nav-dropdown-hover-color;
+        text-decoration: @global-link-hover-text-decoration;
+    }
+
+    .uk-nav-dropdown .uk-nav-header { color: @contrast-primary-nav-dropdown-header-color; }
+
+    .uk-nav-dropdown .uk-nav-divider { border-top-color: @contrast-primary-nav-dropdown-divider-border; }
+
+    .uk-nav-dropdown ul a { color: @contrast-primary-nav-dropdown-nested-color; }
+    .uk-nav-dropdown ul a:hover { color: @contrast-primary-nav-dropdown-nested-hover-color; }
+
+    .uk-nav-dropdown > li.uk-active > a {
+        background: @contrast-primary-nav-dropdown-active-background;
+        color: @contrast-primary-nav-dropdown-active-color;
+    }
+
+
+    // Overlay
+    // ========================================================================
+
+    .uk-overlay-panel {
+
+        color: @contrast-primary-overlay-panel-color;
+
+        h1, h2, h3, h4, h5, h6 { color: inherit; }
+
+        .uk-panel-badge.uk-text-muted { color: @contrast-primary-overlay-badge-color !important; }
+
+    }
+
+
+    .uk-overlay-background { background: @contrast-primary-overlay-panel-background; }
+
+    .uk-overlay-icon::before { color: @contrast-primary-overlay-icon-color; }
+
+
+    // Pagination
+    // ========================================================================
+
+    .uk-pagination > li > a {
+        color: @global-primary-color;
+        text-decoration: none;
+    }
+
+    .uk-pagination > li > a:hover,
+    .uk-pagination > li > a:focus { color: @global-primary-highlight-color; }
+
+    .uk-pagination > li > a:active { color: @global-primary-color; }
+
+    .uk-pagination > .uk-active > span {
+
+        color: @global-primary-highlight-color;
+
+        // Border
+        &::after { background: @global-primary-highlight-color; }
+
+    }
+
+    .uk-pagination > .uk-disabled > span { color: @global-primary-muted-color; }
+
+
+    // Panel
+    // ========================================================================
+
+    // Panel-title
+    .uk-panel .uk-panel-title { color: @global-primary-highlight-color; }
+
+    // uk-panel title color
+    .uk-panel:not([class*='uk-panel-box']) > .uk-panel-title  { color: @contrast-primary-base-heading-color; }
+
+    // uk-panel-header
+    .uk-panel-header .uk-panel-title::after { border-bottom-color: @global-primary-border; }
+
+    // uk-panel-divider
+    .uk-panel + .uk-panel-divider::before { border-top-color: @global-primary-border; }
+
+    // uk-panel-box
+    .uk-panel-box {
+
+        background: @contrast-primary-panel-box-background;
+        color: @contrast-primary-panel-box-color;
+
+        // Title
+        .uk-panel-title { color: @contrast-primary-panel-box-title-color; }
+
+        // Hyperlink
+        > a:not([class]),
+        > :not([class*='uk-nav']) a:not([class]) {
+
+            color: @contrast-primary-panel-box-link-color;
+
+            &:hover { color: @contrast-primary-panel-box-link-hover-color; }
+
+        }
+
+        // Button
+        .uk-button:not(.uk-button-primary) {
+
+            background: @contrast-primary-panel-box-button-background;
+            color: @contrast-primary-panel-box-button-color;
+
+            &:hover {
+                background: fade(@contrast-primary-panel-box-button-background, 70%);
+                color: fade(@contrast-primary-panel-box-button-color, 70%);
+            }
+
+        }
+
+        // Badge
+        .uk-badge {
+            background: @contrast-primary-panel-box-badge-background;
+            color: @contrast-primary-panel-box-badge-color;
+        }
+
+        // Shadow
+        &::after { background: @contrast-primary-panel-box-shadow; }
+
+        // uk-nav-side
+        .uk-nav-side > li > a { color: @contrast-primary-panel-box-nav-side-color; }
+
+        .uk-nav-side > li > a:hover,
+        .uk-nav-side > li > a:focus {
+            background: @contrast-primary-panel-box-nav-side-hover-background;
+            color: @contrast-primary-panel-box-nav-side-hover-color;
+        }
+
+        .uk-nav-side > li.uk-active > a {
+            background: @contrast-primary-panel-box-nav-side-active-background;
+            color: @contrast-primary-panel-box-nav-side-active-color;
+        }
+
+        // Nav header
+        .uk-nav-side .uk-nav-header { color: @contrast-primary-panel-box-nav-side-header-color; }
+
+        // Nav divider
+        .uk-nav-side .uk-nav-divider { border-top-color: @contrast-primary-panel-box-nav-side-divider-border; }
+
+        // Nested items
+        .uk-nav-side ul a { color: @contrast-primary-panel-box-nav-side-nested-color; }
+        .uk-nav-side ul a:hover { color: @contrast-primary-panel-box-nav-side-nested-hover-color; }
+
+    }
+
+    .uk-panel-box-hover:hover,
+    .uk-panel-box-primary-hover:hover,
+    .uk-panel-box-secondary-hover:hover {
+        background: @contrast-primary-panel-box-hover-background;
+        box-shadow: @contrast-primary-panel-box-hover-box-shadow;
+    }
+
+    .uk-panel-box-secondary { border-color: @contrast-primary-panel-box-background; }
+    .uk-panel-box-secondary-hover:hover { border-color: @contrast-primary-panel-box-hover-background; }
+
+    // uk-panel-hover
+    .uk-panel-hover {
+
+        border-color: @contrast-primary-panel-hover-border;
+        background: @contrast-primary-panel-hover-background;
+        color: @contrast-primary-panel-hover-color;
+
+        // Title
+        .uk-panel-title { color: @contrast-primary-panel-hover-title-color !important; }
+
+        // Shadow
+        &::after { background: @contrast-primary-panel-box-shadow; }
+    }
+
+    .uk-panel-hover:hover {
+        background: @contrast-primary-panel-hover-hover-background;
+        box-shadow: @contrast-primary-panel-hover-hover-box-shadow;
+        color: @contrast-primary-panel-hover-hover-color;
+    }
+
+
+    // Progress
+    // ========================================================================
+
+    .uk-progress { background: @contrast-primary-progress-background; }
+
+    .uk-progress-bar,
+    [class*='uk-progress-'] .uk-progress-bar {
+        background: @contrast-primary-progress-bar-background;
+        color: @contrast-primary-progress-bar-color;
+    }
+
+
+    // Subnav
+    // ========================================================================
+
+    // uk-subnav onclick event
+    .uk-subnav > li:not(.uk-disabled) > a:active { color: @contrast-primary-subnav-onclick-color; }
+
+    // uk-subnav-pill
+    .uk-subnav-pill > * > a { border-color: @contrast-primary-subnav-pill-border; }
+
+    // uk-subnav-pill onclick event
+    .uk-subnav-pill > li:not(.uk-disabled) > a:active {
+        border-color: @contrast-primary-subnav-pill-onclick-border;
+        background: @contrast-primary-subnav-pill-onclick-background;
+        color: @contrast-primary-subnav-pill-onclick-color;
+    }
+
+    .uk-subnav > .uk-disabled > a { color: @contrast-primary-subnav-disabled-color; }
+
+
+    // Table
+    // ========================================================================
+
+    .uk-table th,
+    .uk-table td { border-color: @global-primary-border; }
+
+    .uk-table { border-color: @global-primary-border; }
+
+    .uk-table tbody tr.uk-active { background: @global-primary-contrast-background; }
+    .uk-table-striped tbody tr:nth-of-type(odd) { background: @global-primary-contrast-background; }
+    .uk-table-hover tbody tr:hover { background: @global-primary-hover-background; }
+
+
+    // Text
+    // ========================================================================
+
+    // Color modifiers
+    .uk-text-success { color: @contrast-primary-text-success-color !important; }
+    .uk-text-warning { color: @contrast-primary-text-warning-color !important; }
+    .uk-text-danger { color: @contrast-primary-text-danger-color !important; }
+
+    // Link muted
+    .uk-link-muted,
+    .uk-link-muted a { color: @contrast-primary-text-muted-color; }
+
+
+    // Thumbnail
+    // ========================================================================
+
+    .uk-thumbnail {
+
+        background: @contrast-primary-thumbnail-background;
+        box-shadow: @contrast-primary-thumbnail-box-shadow;
+
+        // Shadow
+        &::after { background: @contrast-primary-thumbnail-shadow; }
+
+    }
+
+    a.uk-thumbnail:hover,
+    a.uk-thumbnail:focus {
+        border-color: @contrast-primary-thumbnail-hover-border;
+        background-color: @contrast-primary-thumbnail-hover-background;
+        box-shadow: @contrast-primary-thumbnail-hover-box-shadow;
+    }
+
+    .uk-thumbnail-caption { color: @contrast-primary-thumbnail-caption-color; }
+
+    // onclick event
+    a.uk-thumbnail:active {
+
+        border-color: @contrast-primary-thumbnail-active-border;
+        background: @contrast-primary-thumbnail-active-background;
+        color: @contrast-primary-thumbnail-active-color;
+
+        .uk-thumbnail-caption { color: @contrast-primary-thumbnail-active-color; }
+
+    }
+
+}
