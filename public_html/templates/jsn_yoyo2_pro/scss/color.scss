@@ -1,0 +1,43 @@
+/* PLEASE BE VERY CAREFUL WHEN EDITTING THIS FILE !
+   Don't change our color variables in line 5 & 6.
+*/
+
+$main-color: false !default;
+$sub-color: false !default;
+
+@if $main-color != false{
+	.our-team .pb-card{
+		border-bottom: 5px solid $main-color !important;
+	}
+	.contact-section:before{
+	    background-color: $main-color;
+	}
+	.flag.maincolor&:before{
+		border-right-color: $main-color;
+	}
+	.pagination > .active > a, .pagination > .active > a:hover, .pagination > .active > a:focus, .pagination > .active > span, .pagination > .active > span:hover, .pagination > .active > span:focus{
+		background-color: $main-color;
+    	border-color: $main-color;
+	}
+	.pagination > li > a:hover, .pagination > li > a:focus, .pagination > li > span:hover, .pagination > li > span:focus{
+		color: $main-color;
+	}	
+	#kwho .btn-link i,#kstats .btn-link i{
+		color: $main-color;
+	}
+	div.demo-contact-form button.jsn-form-submit,.yoyo-services  .pb-content > p.Description > span > a{
+		background-color: $main-color;
+	}
+	div.demo-contact-form button.jsn-form-submit:before,.yoyo-services  .pb-content > p.Description > span > a:before{
+		background-color: $main-color;
+		border-color: $main-color;
+	}	
+	div.demo-contact-form button.jsn-form-submit:hover,
+	.yoyo-services  .pb-content > p.Description > span > a:hover,
+	div.demo-contact-form button.jsn-form-submit:hover:before,
+	.yoyo-services  .pb-content > p.Description > span > a:hover:before
+	{
+		background-color: lighten($main-color, 5%);
+		border-color: lighten($main-color, 5%);	
+	}
+}

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.0" type="plugin" group="joomgallery" method="upgrade">
+  <name>JoomGallery - Integrate RokBox</name>
+  <author>JoomGallery ProjectTeam</author>
+  <creationDate>2019/04/12</creationDate>
+  <copyright>Copyright (C) 2009 - 2019 Open Source Matters. All rights reserved.</copyright>
+  <license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+  <authorUrl>www.joomgalleryfriends.net</authorUrl>
+  <version>3.0.1</version>
+  <description>Integrates RokBox in JoomGallery</description>
+  <files>
+    <filename plugin="joomrokbox">joomrokbox.php</filename>
+  </files>
+  <updateservers>
+    <server type="collection" priority="1" name="JoomGallery Update Service">https://www.joomgalleryfriends.net/components/com_newversion/xml/extensions3.xml</server>
+  </updateservers>
+</extension>

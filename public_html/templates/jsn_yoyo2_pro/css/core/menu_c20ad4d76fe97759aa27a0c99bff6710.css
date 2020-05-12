@@ -1,0 +1,12 @@
+#menu_item_menu {
+  background-color: custom;
+  color: #000;
+}
+#menu_item_menu ul.navbar-nav > li > a, #menu_item_menu ul.navbar-nav > li > span.nav-header {
+  font-size: 16px;
+  color: #fff;
+  text-transform: uppercase;
+}
+#menu_item_menu ul.navbar-nav > li:hover > a, #menu_item_menu ul.navbar-nav > li.active > a, #menu_item_menu ul.navbar-nav > li:hover > span.nav-header, #menu_item_menu ul.navbar-nav > li.active > span.nav-header {
+  background-color: #ca0554;
+}
