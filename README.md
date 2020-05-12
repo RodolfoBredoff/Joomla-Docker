@@ -13,13 +13,13 @@ utilizando uma instância com PHP e MySQL para hospedagem de dados e um servidor
 
 ##### Clonar o projeto
 ```
-git clone https://github.com/RodolfoBredoff/Tecweb-Joomla
+git clone https://github.com/RodolfoBredoff/Joomla-Docker
 ```
 
 ##### entre na pasta do projeot
 
 ```
-cd tecweb-joomla
+cd joomla-docker
 ```
 
 ##### renomeie o arquivo
