@@ -19,7 +19,7 @@ git clone https://github.com/RodolfoBredoff/Joomla-Docker
 ##### entre na pasta do projeot
 
 ```
-cd tecweb-joomla
+cd joomla-docker
 ```
 
 ##### renomeie o arquivo
