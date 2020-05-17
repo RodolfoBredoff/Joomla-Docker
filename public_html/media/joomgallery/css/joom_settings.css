@@ -17,14 +17,14 @@ joom_local.css.README umbenennen und anpassen
   width:33%;
 }
 .jg_element_txt {
-  float:left;
+  text-align:center !important;
 }
 .jg_element_txt_subs {
-  float:left;
+  text-align:center !important;
   font-size: 0.9em;
 }
 .jg_photo_container {
-  float:left;
+  text-align:center !important;
 }
 
 /* Category view */
@@ -62,11 +62,11 @@ joom_local.css.README umbenennen und anpassen
 
 /* Detail view */
 .jg_minipic {
-  height:28px;
+  height:50px;
 }
 #motioncontainer {
   width:400px; /* Set to gallery width, in px or percentage */
-  height:50px;/* Set to gallery height */
+  height:200px;/* Set to gallery height */
 }
 
 /* Special view - Toplists*/
