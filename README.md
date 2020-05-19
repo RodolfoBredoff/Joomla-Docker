@@ -16,17 +16,16 @@ utilizando uma instância com PHP e MySQL para hospedagem de dados e um servidor
 git clone https://github.com/RodolfoBredoff/Joomla-Docker
 ```
 
-##### entre na pasta do projeot
+##### entre na pasta do projeto
 
 ```
 cd joomla-docker
 ```
 
-##### renomeie o arquivo
-> **gitignore.template to .gitignore**
+##### entre na pasta 'ops'
 
 ```
-cp gitignore.template .gitignore
+cd ops
 ```
 
 ##### Execute docker-compose
@@ -34,42 +33,13 @@ cp gitignore.template .gitignore
 docker-compose up -d
 ```
 
-##### Altere permissões
-```
-sudo chown -R www-data:www-data public_html/
-```
+#### Acesso no navegador pelo localhost
+[http://localhost:8080/](http://localhost:8000/)
+> 
 
-##### Acesso ao phpmyadmin [phpmyadmin](http://localhost:8000/) 
-> nome/senha 
-```
-root/root
-```
+#**Observação**
 
-##### Import SQL script
-![Import SQL script](https://github.com/RodolfoBredoff/TecwebSite/blob/master/screenshots/1_phpmyadmin_import.jpg "Import SQL script")
-
-##### Execute import
-![Execute SQL script](https://github.com/RodolfoBredoff/TecwebSite/blob/master/screenshots/2_phpmyadmin_execute.jpg "Eecute SQL script")
- 
-##### Import success
-![Success import](https://github.com/RodolfoBredoff/TecwebSite/blob/master/screenshots/3_phpmyadmin_success.jpg "Success import")
-
-#### Acesso ao site
-[http://localhost:8080/](http://localhost:8080/)
-
-#### Acesso ao painel de adminstrador
-[http://localhost:8080/administrator/](http://localhost:8080/administrator/)
-> login/senha
-```
-admin/admin
-```
-
-#### Acesso ao phpmyadmin
-[http://localhost:8000/](http://localhost:8000/)
->  login/senha
-```
-root/root
-```
+Todo comando git deve ser executado dentro da pasta joomla-docker para manter a estrutura correta de funcionamento
 
 #**Opcional**
 
