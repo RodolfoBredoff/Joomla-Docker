@@ -100,7 +100,7 @@ hr {border: 0.1px solid #e1e1e1;color: #e1e1e1;margin: 15px 0;}
 .slicknav_menu .slicknav_menutxt{ color:#FFF;  font-weight:bold;  text-shadow:0 1px 3px #000}
 /* Button Lines */
 .slicknav_menu .slicknav_icon-bar{ background-color:#f5f5f5}
-.slicknav_menu{ background:#4c4c4c;  padding:5px}
+.slicknav_menu{ background:#ecf122;  padding:5px}
 .slicknav_nav{ color:#fff;  margin:0;  padding:0;  font-size:0.875em}
 .slicknav_nav, .slicknav_nav ul{ list-style:none;  overflow:hidden}
 .slicknav_nav ul{ padding:0;  margin:0 0 0 20px}
@@ -122,11 +122,11 @@ hr {border: 0.1px solid #e1e1e1;color: #e1e1e1;margin: 15px 0;}
 @media screen and (min-width: 961px) {.slicknav_menu, .slicknav_menutxt {display:none;}}
 
 /* Navigation */
-#nav { font-family: 'Open Sans', sans-serif; float: right; position: relative;z-index: 10; background: #555; padding:12px; margin: 15px 0 0; border-radius: 9px; background: #78c3d6;}
+#nav { font-family: 'Open Sans', sans-serif; float: right; position: relative;z-index: 10; background: #555; padding:12px; margin: 15px 0 0; border-radius: 9px; background: #ecf122;}
 #nav ul, #nav ol {float:left; height:auto; margin:0;}
 #nav ul li {list-style:none;float:left;position:relative; padding-right:0px 20px; margin:0; margin-right:5px;}
 #nav ul li a {color: #fff;display: block; font-size: 15px;font-weight: normal;padding: 7px 11px;text-align: left;text-shadow: none; border: 1px solid transparent;}
-#nav ul li a:hover, #nav ul li.active a, #nav ul li:hover a  { background: none repeat scroll 0 0 #86d1e4; border: 1px solid #86d1e4;color: #fff;text-decoration: none; border-radius:3px;} /* Main Menu Elements */
+#nav ul li a:hover, #nav ul li.active a, #nav ul li:hover a  { background: none repeat scroll 0 0 #ecf122; border: 1px solid #ecf122;color: #fff;text-decoration: none; border-radius:3px;} /* Main Menu Elements */
 #nav ul li ul {position:absolute;width:180px;left:-999em;border-top:0; margin:0; padding:0;} /* Secondary Menu Container */
 #nav ul li:hover ul, #menu ul li.sfHover ul {left:13px;}
 #nav ul li ul li {padding: 0; height:auto; width:180px; margin:0 auto; border:0; text-align: left; }
@@ -144,7 +144,7 @@ hr {border: 0.1px solid #e1e1e1;color: #e1e1e1;margin: 15px 0;}
 
 /* Header */
 #header {height: 100%;margin: 0 auto;max-width: 1170px;position: relative;}
-#header-w {background: #78c3d6; position: relative;  height: 90px;}
+#header-w {background: #ecf122; position: relative;  height: 90px;}
 
 @media (max-width: 959px) {.fro{bottom:6px; margin:0; padding:0; position:absolute; right:10px;}}
 #relative { position:relative;}
@@ -158,8 +158,8 @@ hr {border: 0.1px solid #e1e1e1;color: #e1e1e1;margin: 15px 0;}
 #slide-w { margin:0; padding:0; background:#EAEAEA url(../images/bg.png) 0 0 repeat-x; border-bottom:1px solid #d6d6d6;border-top:1px solid #f5f5f5;}
 #slide { max-width:960px; margin:0 auto;}
 
-.web  {margin:0 0 0 -586px; padding:0; z-index: 10; font-size:10px; color:#56a3b7; text-align:right; text-shadow:none; bottom:5px; left:50%; line-height:6px; height:10px; position:absolute;}
-.web a , .web a:hover{color:#56a3b7; cursor: text; text-decoration:none; zoom: 0; }
+.web  {margin:0 0 0 -586px; padding:0; z-index: 10; font-family:'Trebuchet MS', sans-serif;font-size:16px; color:#0a0a0a; text-align:right; text-shadow:none; bottom:5px; left:50%; line-height:3px; height:8px; position:absolute;}
+.web a , .web a:hover{color:#0a0a0a; cursor: text; text-decoration:none; zoom: 0; }
 
 @media screen and (max-width: 980px) {
 #socialbox {display:none;}
@@ -387,7 +387,7 @@ div.panelz {height: 20px; display: none; width: 90px; float: right; text-align: 
 #social {max-width:1170px; margin: auto; height:100%; position: relative;}
 #social img:hover{opacity:0.4;}
 
-#bottomwide {width:100%; margin: auto; position: relative; background: none repeat scroll 0 0 #78c3d6; border-top: 1px solid #56a3b7;box-shadow: 0 1px 0 #56a3b7 inset; color: #fff;}
+#bottomwide {width:100%; margin: auto; position: relative; background: none repeat scroll 0 0 #ecf122; border-top: 1px solid #56a3b7;box-shadow: 0 1px 0 #ecf122 inset; color: #fff;}
 #bottom {max-width: 1170px; margin: auto; height:100%; padding-bottom:10px;  position: relative; background: none;}
 #bottom:before,#bottom:after {content:"";display:table;}
 .user1  h3, .user2  h3, .user3  h3 {color:#fff; font-weight:bold; font-family: 'tahoma', sans-serif; font-size:16px; margin:0px; }

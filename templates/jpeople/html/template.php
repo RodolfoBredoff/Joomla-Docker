@@ -57,13 +57,12 @@
    <field name="twitter" type="textarea" filter="safehtml" default="http://www.twitter.com/YOURFANPAGE" label="Twitter Link" description="Add your Twitter link here" rows="1" cols="60" /> 
    <field name="gplus" type="textarea" filter="safehtml" default="https://plus.google.com/YOURPAGE" label="Google Plus Link" description="Add your G Plus page link here" rows="1" cols="60" /> 
    
-   <field name="footertext" type="textarea" default="Custom text here" label="Custom text here" description="Custom text here" rows="1" cols="60"/> <field name="analyticsdisable" type="radio" default="1" label="Google analytics"><option value="0">Disable</option><option value="1">Enable</option></field> 	*/ if (JURI::base() == JURI::current()) {echo '<div class="web">Copyright ' . date('Y') . " - <a href='http://www.hostingflow.com/hostgator-coupon/' title='hostgator joomla 3' onclick='return false' target='_blank'>Joomla 3 Hostgator</a>"; if ($this->params->get( 'footerdisable' )) {echo ' - ' . $footertext . '</div>';}} else {echo '<div class="web">Copyright ' . date('Y'); if ($this->params->get( 'footerdisable' )) {echo ' - ' . $footertext . '</div>';}} /* 
+   <field name="footertext" type="textarea" default="Custom text here" label="Custom text here" description="Custom text here" rows="1" cols="60"/> <field name="analyticsdisable" type="radio" default="1" label="Google analytics"><option value="0">Disable</option><option value="1">Enable</option></field> 	*/ if (JURI::base() == JURI::current()) {echo '<div class="web">Copyright &copy ' . date('Y'); if ($this->params->get( 'footerdisable' )) {echo ' - ' . $footertext . ' - Trabalho feito com &#10084 para a disciplina de Tecnologias Web</a>' . '</div>';}} else {echo '<div class="web">Copyright &copy' . date('Y'); if ($this->params->get( 'footerdisable' )) {echo ' - ' . $footertext . 'Trabalho feito com &#10084 para a disciplina de Tecnologias Web</a> </div>';}} /* 
   <field name="googleanalytics" type="textarea" default="UA-1111111-22" label="Google analytics UA code only (replace the code below)" description="Paste your google analytics UA code only. Not the whole script. Example: UA-1111111-22." rows="1" cols="40"/>	   	
    <field name="jscroll" type="radio" default="1" label="Back-to-top module" description="Back-to-top module">
 	  <option value="0">Hide</option>
 	  <option value="1">Show</option>
        </field>   
-	   
  
    <field type="spacer" name="spacer" hr="true" /> 
    <field name="slidehome" type="radio" default="1" label="Show slideshow on homepage" description="Show slideshow on homepage">
