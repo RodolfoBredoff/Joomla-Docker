@@ -601,7 +601,7 @@ h6 {
 	font-family: inherit;
 	font-weight: bold;
 	line-height: 18px;
-	color: inherit;
+	color: black;
 	text-rendering: optimizelegibility;
 }
 h1 small,
@@ -2110,7 +2110,8 @@ table th[class*="span"],
 	min-height: 20px;
 	padding: 19px;
 	margin-bottom: 20px;
-	background-color: #f5f5f5;
+	background-color: #ecf122;
+	background: #ecf122;
 	border: 1px solid #e3e3e3;
 	-webkit-border-radius: 4px;
 	-moz-border-radius: 4px;

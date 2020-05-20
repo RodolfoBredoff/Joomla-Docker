@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+<fieldset>
+    <field name="id" type="text" class="readonly" readonly="true" default="0" size="10"/>
+    <field 
+        name="title" 
+        type="text" 
+        label="Title" 
+        description="The title for the poll"
+        class="inputbox"
+        size="30"
+        required="true"
+    />
+
+    <field 
+        name="question" 
+        type="text" 
+        label="Question" 
+        description="The question for the poll"
+        class="inputbox"
+        size="30"
+        required="true"
+    />
+
+    <field
+        name="allow_multiple"
+        type="checkbox"
+        label="Allow multiple Votes"
+        description="Allow people to vote on this poll multiple times?"
+        value="1" 
+        checked="0"
+    />
+
+    <field
+        name="awnsers"
+        type="subform"
+        label="Answers"
+        formsource="administrator/components/com_qluepoll/models/forms/awnser.xml"
+        multiple="true"
+        layout="joomla.form.field.subform.repeatable-table"
+    />
+
+
+</fieldset>
+</form>

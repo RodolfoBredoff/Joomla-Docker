@@ -1,7 +1,7 @@
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,font,img,ins,kbd,q,s,samp,small,strike,sub,sup,tt,var,center,dl,dt,dd,ul,li,fieldset,form,label,legend,table,caption,tfoot,thead{background: transparent;border: 0;font-style: inherit;font-weight: inherit;margin: 0;padding: 0;outline: 0;vertical-align: baseline;}
-tr,th,td {background: transparent;border: 1px solid #e1e1e1;font-style: inherit;font-weight: inherit;margin: 0;padding-left: 7px;outline: 0;vertical-align: baseline;} 
+tr,th,td {background: transparent;border: 1px solid #ffffff;font-style: inherit;font-weight: inherit;margin: 0;padding-left: 7px;outline: 0;vertical-align: baseline;} 
 table {border-collapse: collapse;border-spacing: 0; width: 100%; border: 1px solid #e1e1e1;}
-html {overflow-y: scroll;} 
+html {overflow-y: scroll;}
 
 /* Main Layout */
 html {height: 100%; width:100%;}
@@ -193,10 +193,10 @@ hr {border: 0.1px solid #e1e1e1;color: #e1e1e1;margin: 15px 0;}
 #rightbar-w {}
 #sidebar {clear:both; margin-bottom: 20px;min-height: 20px; width:100%;}
 #sidebar .module {margin-bottom: 15px; color:#727272;}
-#sidebar .module-title {font-family: "open sans",sans-serif;font-size: 20px;font-weight: normal;line-height: 90%; color:#666;}
+#sidebar .module-title {font-family: "open sans",sans-serif;font-size: 20px;font-weight: normal;line-height: 90%; color:#666;visibility: hidden;}
 #sidebar .module-title h3 {}
-#sidebar .module-body p{padding:0; margin:0;}
-#sidebar  ul li { margin:0 5px; padding:0;}
+#sidebar .module-body p{padding:0; margin:0; color: black;}
+#sidebar  ul li { margin:0 5px; padding:0; color: black}
 #sidebar .module ul.menu{margin:5px 0 0 0; padding:0;list-style:none; padding:0; list-style-type:none;}
 #sidebar .module ul.menu li{ list-style:none; list-style-type:none;margin:0; padding:0; }
 #sidebar .module ul.menu li a {background-color:#f1f1f1;border-bottom: 1px solid #FFFFFF;color: #575757;display: block;padding: 3px 15px 3px 5px;text-decoration: none; text-align: left;}
@@ -304,7 +304,7 @@ td.item-state {width:15%;text-align:left;}
 .spacer.w33 .module {width: 33.3%;}
 .spacer.w24 .module {width: 24.5%;}
 
-.button, .validate {  background: none repeat scroll 0 0 #757474;border: 1px solid #555555;color: #FFFFFF;font-weight: normal;margin: 4px;padding: 1px 12px;}
+.button, .validate {  background: none repeat scroll 0 0 #334a29;border: 1px solid #ffffff;color: #FFFFFF;font-weight: normal;margin: 4px;padding: 1px 12px;}
 .button:hover,.validate:hover {background:#3A759E;color:#fff;}
 
 .breadcrumbs { padding:0px 0 2px 5px; color:#999; font-size:11px; clear: both;}
