@@ -1,5 +1,5 @@
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,font,img,ins,kbd,q,s,samp,small,strike,sub,sup,tt,var,center,dl,dt,dd,ul,li,fieldset,form,label,legend,table,caption,tfoot,thead{background: transparent;border: 0;font-style: inherit;font-weight: inherit;margin: 0;padding: 0;outline: 0;vertical-align: baseline;}
-tr,th,td {background: transparent;border: 1px solid #ffffff;font-style: inherit;font-weight: inherit;margin: 0;padding-left: 7px;outline: 0;vertical-align: baseline;} 
+tr,th,td {background: #ffffff;border: 1px solid #ffffff;font-style: inherit;font-weight: inherit;margin: 0;padding-left: 7px;outline: 0;vertical-align: baseline;} 
 table {border-collapse: collapse;border-spacing: 0; width: 100%; border: 1px solid #e1e1e1;}
 html {overflow-y: scroll;}
 

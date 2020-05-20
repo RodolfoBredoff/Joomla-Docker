@@ -599,6 +599,7 @@ h5,
 h6 {
 	margin: 9px 0;
 	font-family: inherit;
+    font-family: Helvetica, Arial, sans-serif;
 	font-weight: bold;
 	line-height: 18px;
 	color: black;
@@ -2110,9 +2111,9 @@ table th[class*="span"],
 	min-height: 20px;
 	padding: 19px;
 	margin-bottom: 20px;
-	background-color: #ecf122;
-	background: #ecf122;
-	border: 1px solid #e3e3e3;
+	background-color: #FDFF7D;
+	background: #FDFF7D;
+	border: 1px solid #FDFF7D;
 	-webkit-border-radius: 4px;
 	-moz-border-radius: 4px;
 	border-radius: 4px;
