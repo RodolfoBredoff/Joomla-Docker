@@ -122,11 +122,11 @@ hr {border: 0.1px solid #e1e1e1;color: #e1e1e1;margin: 15px 0;}
 @media screen and (min-width: 961px) {.slicknav_menu, .slicknav_menutxt {display:none;}}
 
 /* Navigation */
-#nav { font-family: 'Open Sans', sans-serif; float: right; position: relative;z-index: 10; background: #555; padding:12px; margin: 15px 0 0; border-radius: 9px; background: #ecf122;}
+#nav { font-family: 'Helvetica', sans-serif; float: right; position: relative;z-index: 10; background: #5d5555; padding:12px; margin: 15px 0 0; border-radius: 9px; background: #ecf122;}
 #nav ul, #nav ol {float:left; height:auto; margin:0;}
 #nav ul li {list-style:none;float:left;position:relative; padding-right:0px 20px; margin:0; margin-right:5px;}
-#nav ul li a {color: #fff;display: block; font-size: 15px;font-weight: normal;padding: 7px 11px;text-align: left;text-shadow: none; border: 1px solid transparent;}
-#nav ul li a:hover, #nav ul li.active a, #nav ul li:hover a  { background: none repeat scroll 0 0 #ecf122; border: 1px solid #ecf122;color: #fff;text-decoration: none; border-radius:3px;} /* Main Menu Elements */
+#nav ul li a {color:#000;display: block; font-size: 18px;font-weight: normal;padding: 7px 11px;text-align: left;text-shadow: none; border: 1px solid transparent;}
+#nav ul li a:hover, #nav ul li.active a, #nav ul li:hover a  { background: none repeat scroll 0 0 #ecf122; border: 1px solid #ecf122; color:#5d5555;text-decoration: none; border-radius:3px;} /* Main Menu Elements */
 #nav ul li ul {position:absolute;width:180px;left:-999em;border-top:0; margin:0; padding:0;} /* Secondary Menu Container */
 #nav ul li:hover ul, #menu ul li.sfHover ul {left:13px;}
 #nav ul li ul li {padding: 0; height:auto; width:180px; margin:0 auto; border:0; text-align: left; }
