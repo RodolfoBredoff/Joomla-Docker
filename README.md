@@ -34,7 +34,7 @@ docker-compose up -d
 ```
 
 #### Acesso no navegador pelo localhost
-[http://localhost:8080/](http://localhost:8000/)
+[http://localhost:8080/](http://localhost:8080/)
 > 
 
 #**Observação**
