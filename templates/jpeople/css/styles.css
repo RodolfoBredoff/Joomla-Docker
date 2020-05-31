@@ -177,12 +177,12 @@ hr {border: 0.1px solid #e1e1e1;color: #e1e1e1;margin: 15px 0;}
 
 #top {width:100%;  height:100%; position: relative; float:left; z-index:1; text-align:center; margin:0 auto; margin: 2px 0 5px; display:table; padding-top:10px;}
 #top p {text-align:left;}
-.top1 {background: #78c3d6; border: 0 none;border-radius: 5px;color: #fff;float: left;padding: 1%;width: 30%;}
-.top2 {background: #78c3d6; border: 0 none;border-radius: 5px;color: #fff;float: left;padding: 1%;width: 30%;}
-.top3 {background: #78c3d6;border: 0 none;border-radius: 5px;color: #fff;float: left;padding: 1%;width: 30%;}
+.top1 {background: #A4A653; border: 0 none;border-radius: 5px;color: #fff;float: left;padding: 1%;width: 30%;}
+.top2 {background: #585924; border: 0 none;border-radius: 5px;color: #fff;float: left;padding: 1%;width: 30%;}
+.top3 {background: #A4A653;border: 0 none;border-radius: 5px;color: #fff;float: left;padding: 1%;width: 30%;}
 .top1:empty, .top2:empty, .top3:empty {display:none;}
 .top1  h3, .top2  h3, .top3  h3 {text-align:left; color:#fff; font-size: 22px; font-family: "Open Sans",sans-serif; line-height:28px; font-weight: bold;margin:0px; text-shadow:none; text-transform: capitalize;}
-.top1 a, .top2 a, .top3 a {background: #43a2ba none repeat scroll 0 0;color: #fff;float: right;font-weight: bold;padding: 7px 10px;}
+.top1 a, .top2 a, .top3 a {background: none none repeat scroll 0 0;color: #fff;float: right;font-weight: bold;padding: 7px 10px;}
 
 @media screen and (max-width: 350px) {.top1, .top2, .top3{width:100%; margin-bottom:3px;}}
 @media screen and (min-width: 350px) {.top2 {margin: 0 2%;}}
@@ -215,7 +215,7 @@ hr {border: 0.1px solid #e1e1e1;color: #e1e1e1;margin: 15px 0;}
 
 #maincol {position: relative;}
 #wrapper {margin:0 auto; max-width:1170px; position: relative;}
-#wrapper-w { background:#fff; position:relative;}
+#wrapper-w { background:ghostwhite; position:relative;}
 
 #leftcolumn{margin-left:9px;padding:0px;max-width:185px;float:left;}
 #rightcolumn{margin-right:9px;padding:0px;max-width:185px;float:right;}
@@ -399,7 +399,7 @@ div.panelz {height: 20px; display: none; width: 90px; float: right; text-align: 
 .remembercheck {width:20px; display: inline;}
 .article-info {color: #555;display: inline;font-size: 11px;font-style: italic;width: 100%; padding:1px 4px; border-radius: 2px;}
 .article-info a {color:#555; text-decoration:underline;}
-
+#gtx-trans {visibility: hidden;}
 .newsflash {overflow:auto;}
 #box {width:100%; clear:both; overflow:auto;}
 #right {float:right; width:49%; height:100%; color: #555;}

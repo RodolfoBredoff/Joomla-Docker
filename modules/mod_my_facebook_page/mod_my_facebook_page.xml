@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.3" client="site" method="upgrade">
+    <name>My Facebook Page</name>
+    <author>Bilal Kabeer Butt</author>
+    <creationDate>09-28-2015</creationDate>
+    <copyright>Copyright (c) GegaByte Corporation. All Rights reserved.</copyright>
+    <license>GPL V2</license>
+    <authorEmail>bilalbutt@gmail.com</authorEmail>
+    <authorUrl>http://www.gegabyte.org</authorUrl>
+    <version>1.4</version>
+    <description>
+
+		&lt;div style="text-align:left;"&gt;
+			&lt;h1 style="text-align: center;" &gt; My Facebook Page &lt;/h1&gt;
+			&lt;p&gt; 
+				
+				With "My Facebook Page" gives you opportunity to list your Facebook or your favorite Facebook page on your website. With "My Facebook Page" you get the following functionality; &lt;br /&gt;
+				&lt;ul&gt;
+					&lt;li&gt;Add Friend’s faces. &lt;/li&gt;
+					&lt;li&gt;Show like button of Facebook page. &lt;/li&gt;
+					&lt;li&gt;Show action button of Facebook page. &lt;/li&gt;
+					&lt;li&gt;Show/Hide cover photo of Facebook page. &lt;/li&gt;
+					&lt;li&gt;Show/Hide posts of Facebook page. &lt;/li&gt;
+					&lt;li&gt;Show small header of Facebook page. &lt;/li&gt;
+					&lt;li&gt;Adapt to width layout. &lt;/li&gt;
+					&lt;li&gt;Show Multiple tabs. &lt;/li&gt;
+				&lt;/ul&gt;
+			
+			&lt;/p&gt;
+		&lt;/div&gt;
+		&lt;div style="text-align: center;" &gt;
+			&lt;img src="http://www.gegabyte.org/subdomains/sig/made-in-pakistan.jpg" width="320" /&gt;
+		&lt;/div&gt;
+
+</description>
+    <!-- Listing of all files that should be installed for the module to function -->
+    <files>
+        <!-- The "module" attribute signifies that this is the main controller file -->
+        <filename module="mod_my_facebook_page">mod_my_facebook_page.php</filename>
+        <filename>index.html</filename>
+        <filename>tmpl/default.php</filename>
+        <filename>tmpl/index.html</filename>
+    </files>
+
+	<updateservers>
+		<server type="extension" name="My Facebook Page" priority="1">http://www.gegabyte.org/joomla_extension_updates/my_facebook_page.xml</server>
+	</updateservers>
+
+    <config>
+        <fields name="params">
+            <fieldset name="basic">
+				<field name="fb_page_protocal" type="list" label="URL Protocol" description="URL Protocol" size="7">
+					<option value=""> -- Please Select -- </option>
+					<option value="https">https</option>
+					<option value="http">http</option>
+				</field>
+				
+				<field name="fb_page_url" type="url" default="http://www.facebook.com/GegaByte.Org" label="Facebook Page URL" description="Facebook Page URL" size="10" />
+                <!--
+				<field name="fb_tabs" type="text" default="timeline, events, messages" label="Tabs to show" description="Tabs to show. Use a comma-separated list to add multiple tabs, i.e. timeline, events." size="10" />
+				-->
+				<field name="mtabs" type="radio" default="0" label="Show Multiple Tabs" description="Show Multiple Tabs" class="btn-group btn-group-yesno">
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </field>
+				
+				<field name="ShowTimeLine" type="radio" default="1" label="Show Timeline Tab" description="Show Timeline Tab (Enable Show Multiple Tabs to function)" class="btn-group btn-group-yesno" showon="mtabs:1">
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </field>
+				
+				<field name="ShowEvents" type="radio" default="1" label="Show Events Tab" description="Show Events Tab (Enable Show Multiple Tabs to function)" class="btn-group btn-group-yesno" showon="mtabs:1">
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </field>
+				
+				<field name="ShowMsgs" type="radio" default="0" label="Show Messages Tab" description="Show Messages Tab (Enable Show Multiple Tabs to function)" class="btn-group btn-group-yesno" showon="mtabs:1">
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </field>
+				
+                <field name="show_posts" type="radio" default="0" label="Show Page Posts" description="Show posts from the Page's timeline (Posts are hiddent only when multiple tabs is disabled)" class="btn-group btn-group-yesno" showon="mtabs:1">
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </field>
+				
+				<field type="spacer" name="myspacer1" hr="true" />
+				
+                <field name="use_small_header" type="radio" default="0" label="Use Small Header" description="Use Small Header" class="btn-group btn-group-yesno">
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </field>
+                <field name="hide_cover_photo" type="radio" default="0" label="Hide Cover Photo" description="Hide the cover photo in the header" class="btn-group btn-group-yesno">
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </field>
+                <field name="show_faces" type="radio" default="1" label="Show Friend's Faces" description="Show profile photos when friends like this" class="btn-group btn-group-yesno">
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </field>
+				
+				<field type="spacer" name="myspacer2" hr="true" />
+				
+				<field name="adapt" type="radio" default="1" label="Adapt to plugin container width" description="Plugin will try to fit inside the container" class="btn-group btn-group-yesno">
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </field>
+				<field name="awidth" type="radio" default="0" label="Use Custom Width" description="Use Custom Width" class="btn-group btn-group-yesno" showon="adapt:0">
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </field>
+                <field name="width" type="integer" default="180" label="Width" description="Plugin Width" first="180" last="500" step="5" showon="adapt:0" />
+				
+				<field name="aheight" type="radio" default="0" label="Use Custom Height" description="Use Custom Height" class="btn-group btn-group-yesno" showon="adapt:0">
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </field>
+                <field name="height" type="integer" default="100" label="Height" description="Plugin Height" first="70" last="400" step="5" showon="adapt:0" />
+				
+            </fieldset>
+        </fields>
+    </config>
+</extension>

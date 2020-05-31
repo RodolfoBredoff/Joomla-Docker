@@ -1,0 +1,937 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.6" client="site" method="upgrade">
+    <name>MOD_COALAWEBNEWS</name>
+    <creationDate>2020-02-19</creationDate>
+    <author>Steven Palmer</author>
+    <authorEmail>support@coalaweb.com</authorEmail>
+    <authorUrl>https://coalaweb.com/</authorUrl>
+    <copyright>© 2020 Steven Palmer (CoalaWeb), All rights reserved.</copyright>
+    <license>GNU/GPL V3 or later.</license>
+    <version>1.1.6</version>
+    <level>Core</level>
+    <description>MOD_COALAWEBNEWS_DESCRIPTION</description>
+
+    <languages folder="language">
+        <language tag="en-GB">en-GB/en-GB.mod_coalawebnews.ini</language>
+		<language tag="en-GB">en-GB/en-GB.mod_coalawebnews.sys.ini</language>
+    </languages>
+
+    <files>
+        <file>helper.php</file>
+		<folder>assets</folder>
+		<file>README.md</file>
+		<file>index.html</file>
+		<file>version.php</file>
+		<file module="mod_coalawebnews">mod_coalawebnews.php</file>
+		<folder>language</folder>
+		<folder>tmpl</folder>
+		<file>CHANGELOG.md</file>
+    </files>
+
+    <!-- HELP FILE -->
+    <help url="MOD_COALAWEBNEWS_HELP_URL"/>
+
+    <!-- Update Server -->
+    <updateservers>
+        <server type="extension" priority="1" name="CoalaWeb News Update">
+            <![CDATA[https://coalaweb.com/index.php?option=com_rdsubs&view=updater&format=xml&cat=16&type=.xml]]>
+        </server>
+    </updateservers>
+
+    <!-- Installation / Uninstallation Script File -->
+    <scriptfile>script.mod_coalawebnews.php</scriptfile>
+
+    <config>
+        <fields
+                name="params"
+                addfieldpath="plugins/system/cwgears/fields">
+
+            <fieldset
+                    name="GENERAL"
+                    label="MOD_CWNEWS_TAB_GENERAL">
+
+                <field
+                        name="css_import"
+                        type="css"/>
+
+                <field
+                        type="spacer"
+                        name="category_spacer"
+                        label="MOD_CWNEWS_SPACER_CATEGORIES"
+                        class="cw_label"/>
+
+                <field
+                        name="catid"
+                        type="category"
+                        extension="com_content"
+                        multiple="true"
+                        default=""
+                        size="10"
+                        label="JCATEGORY"
+                        description="MOD_CWNEWS_FIELD_CATEGORY_DESC">
+                    <option value="">JOPTION_ALL_CATEGORIES</option>
+                </field>
+
+                <field
+                        name="more_from"
+                        class="btn-group btn-group-yesno"
+                        type="radio"
+                        default="1"
+                        label="MOD_CWNEWS_FIELD_MOREFROM_LABEL"
+                        description="MOD_CWNEWS_FIELD_MOREFROM_DESC">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+
+                <field
+                        name="morefrom_text"
+                        type="text"
+                        default=""
+                        size="20"
+                        label="MOD_CWNEWS_FIELD_MOREFROM_TEXT_LABEL"
+                        description="MOD_CWNEWS_FIELD_MOREFROM_TEXT_DESC"/>
+
+                <field
+                        type="spacer"
+                        name="tags_spacer"
+                        label="MOD_CWNEWS_SPACER_TAGS"
+                        class="cw_label"/>
+
+                <field
+                        name="tag"
+                        type="pro"
+                        label="MOD_CWNEWS_FIELD_TAGS_LABEL"
+                        description="MOD_CWNEWS_FIELD_TAGS_DESC"/>
+
+                <field
+                        name="display_tags"
+                        type="pro"
+                        label="MOD_CWNEWS_FIELD_DISPLAY_TAGS_LABEL"
+                        description="MOD_CWNEWS_FIELD_DISPLAY_TAGS_DESC"/>
+
+                <field
+                        name="tags_location"
+                        type="pro"
+                        label="MOD_CWNEWS_FIELD_LOCATION_LABEL"
+                        description="MOD_CWNEWS_FIELD_LOCATION_DESC"/>
+
+                <field
+                        type="spacer"
+                        name="article_spacer"
+                        label="MOD_CWNEWS_SPACER_ARTICLES"
+                        class="cw_label"/>
+
+                <field
+                        name="item_title"
+                        class="btn-group btn-group-yesno"
+                        type="radio"
+                        default="1"
+                        label="MOD_CWNEWS_FIELD_TITLE_LABEL"
+                        description="MOD_CWNEWS_FIELD_TITLE_DESC">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+
+                <field
+                        name="link_titles"
+                        class="btn-group btn-group-yesno"
+                        type="radio"
+                        default="1"
+                        label="MOD_CWNEWS_FIELD_LINKTITLE_LABEL"
+                        description="MOD_CWNEWS_FIELD_LINKTITLE_DESC">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+
+                <field
+                        name="item_heading"
+                        type="list"
+                        default="h3"
+                        label="MOD_CWNEWS_TITLE_LABEL"
+                        description="MOD_CWNEWS_HEADING_DESC">
+                    <option value="h1">JH1</option>
+                    <option value="h2">JH2</option>
+                    <option value="h3">JH3</option>
+                    <option value="h4">JH4</option>
+                    <option value="h5">JH5</option>
+                </field>
+
+                <field
+                        name="count"
+                        type="text"
+                        default="5"
+                        label="MOD_CWNEWS_FIELD_ITEMS_LABEL"
+                        description="MOD_CWNEWS_FIELD_ITEMS_DESC"/>
+
+                <field
+                        name="skip"
+                        type="pro"
+                        label="MOD_CWNEWS_FIELD_SKIP_LABEL"
+                        description="MOD_CWNEWS_FIELD_SKIP_DESC"/>
+
+                <field
+                        name="show_featured"
+                        type="pro"
+                        label="MOD_CWNEWS_FIELD_FEATURED_LABEL"
+                        description="MOD_CWNEWS_FIELD_FEATURED_DESC"/>
+
+                <field
+                        name="max_char"
+                        type="text"
+                        default="200"
+                        label="MOD_CWNEWS_FIELD_MAX_CHAR_LABEL"
+                        description="MOD_CWNEWS_FIELD_MAX_CHAR_DESC"/>
+
+                <field
+                        name="ordering"
+                        type="list"
+                        default="a.publish_up"
+                        label="MOD_CWNEWS_FIELD_ORDERING_LABEL"
+                        description="MOD_CWNEWS_FIELD_ORDERING_DESC">
+                    <option value="a.publish_up">MOD_CWNEWS_FIELD_ORDERING_PUBLISHED_DATE</option>
+                    <option value="a.created">MOD_CWNEWS_FIELD_ORDERING_CREATED_DATE</option>
+                    <option value="a.ordering">MOD_CWNEWS_FIELD_ORDERING_ORDERING</option>
+                    <option value="a.hits">JGLOBAL_HITS</option>
+                    <option value="rand()">MOD_CWNEWS_FIELD_ORDERING_RANDOM</option>
+                </field>
+
+                <field
+                        name="direction"
+                        type="list"
+                        default="1"
+                        label="MOD_CWNEWS_FIELD_ORDER_DIRECTION_LABEL"
+                        description="MOD_CWNEWS_FIELD_ORDER_DIRECTION_DESC">
+                    <option value="0">MOD_CWNEWS_FIELD_ORDER_DIRECTION_OPT1</option>
+                    <option value="1">MOD_CWNEWS_FIELD_ORDER_DIRECTION_OPT2</option>
+                </field>
+
+                <field
+                        type="spacer"
+                        name="exclusions_spacer"
+                        label="MOD_CWNEWS_SPACER_EXCLUSIONS"
+                        class="cw_label"/>
+
+                <field
+                        name="articles_exclude"
+                        type="pro"
+                        label="MOD_CWNEWS_FIELD_A_EXCLUDE_LABEL"
+                        description="MOD_CWNEWS_FIELD_A_EXCLUDE_DESC"/>
+
+                <field
+                        name="exclude_date_range"
+                        type="pro"
+                        label="MOD_CWNEWS_FIELD_EXCLUDE_RANGE_LABEL"
+                        description="MOD_CWNEWS_FIELD_EXCLUDE_RANGE_DESC"/>
+
+                <field
+                        name="exclude_date_by"
+                        type="pro"
+                        label="MOD_CWNEWS_FIELD_EXCLUDE_DATE_BY_LABEL"
+                        description="MOD_CWNEWS_FIELD_EXCLUDE_DATE_BY_DESC"/>
+
+                <field
+                        name="exclude_date_start"
+                        type="pro"
+                        label="MOD_CWNEWS_FIELD_EXCLUDE_DATE_START_LABEL"
+                        description="MOD_CWNEWS_FIELD_EXCLUDE_DATE_START_DESC"/>
+
+                <field
+                        name="exclude_date_end"
+                        type="pro"
+                        label="MOD_CWNEWS_FIELD_EXCLUDE_DATE_END_LABEL"
+                        description="MOD_CWNEWS_FIELD_EXCLUDE_DATE_END_DESC"/>
+
+                <field
+                        type="spacer"
+                        name="readmore_spacer"
+                        label="MOD_CWNEWS_SPACER_READMORE"
+                        class="cw_label"/>
+
+                <field
+                        name="show_readmore"
+                        type="radio"
+                        class="btn-group btn-group-yesno"
+                        default="1"
+                        label="MOD_CWNEWS_FIELD_READMORE_LABEL"
+                        description="MOD_CWNEWS_FIELD_READMORE_DESC">
+                    <option value="1">JSHOW</option>
+                    <option value="0">JHIDE</option>
+                </field>
+
+                <field
+                        name="always_readmore"
+                        type="pro"
+                        label="MOD_CWNEWS_FIELD_ALWAYS_READMORE_LABEL"
+                        description="MOD_CWNEWS_FIELD_ALWAYS_READMORE_DESC">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+
+                <field
+                        name="readmore_text"
+                        type="text"
+                        default=""
+                        size="20"
+                        label="MOD_CWNEWS_FIELD_RM_TEXT_LABEL"
+                        description="MOD_CWNEWS_FIELD_RM_TEXT_DESC"/>
+
+                <field
+                        name="readmore_type"
+                        type="list"
+                        default="l"
+                        label="MOD_CWNEWS_FIELD_READMORE_TYPE_LABEL"
+                        description="MOD_CWNEWS_FIELD_READMORE_TYPE_DESC">
+                    <option value="l">MOD_CWNEWS_FIELD_READMORE_TYPE_OPT4</option>
+                </field>
+
+                <field
+                        name="readmore_custom"
+                        type="pro"
+                        label="MOD_CWNEWS_FIELD_RM_CUSTOM_LABEL"
+                        description="MOD_CWNEWS_FIELD_RM_CUSTOM_DESC"/>
+
+                <field
+                        type="spacer"
+                        name="links_spacer"
+                        label="MOD_CWNEWS_SPACER_LINKS"
+                        class="cw_label"/>
+
+                <field
+                        name="display_links"
+                        class="btn-group btn-group-yesno"
+                        type="radio"
+                        default="1"
+                        label="MOD_CWNEWS_FIELD_DISPLAY_LINKS_LABEL"
+                        description="MOD_CWNEWS_FIELD_DISPLAY_LINKS_DESC">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+
+                <field
+                        name="link_count"
+                        type="text"
+                        default="5"
+                        label="MOD_CWNEWS_FIELD_LINK_LABEL"
+                        description="MOD_CWNEWS_FIELD_LINK_DESC"/>
+
+                <field
+                        name="links_title"
+                        class="btn-group btn-group-yesno"
+                        type="radio"
+                        default="1"
+                        label="MOD_CWNEWS_FIELD_SHOW_HEADING_LABEL"
+                        description="MOD_CWNEWS_FIELD_SHOW_HEADING_DESC">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+
+                <field
+                        name="link_heading"
+                        type="list"
+                        default="h4"
+                        label="MOD_CWNEWS_HEADING_LABEL"
+                        description="MOD_CWNEWS_HEADING_DESC">
+                    <option value="h1">JH1</option>
+                    <option value="h2">JH2</option>
+                    <option value="h3">JH3</option>
+                    <option value="h4">JH4</option>
+                    <option value="h5">JH5</option>
+                </field>
+
+                <field
+                        name="link_text"
+                        type="text"
+                        default=""
+                        size="20"
+                        label="MOD_CWNEWS_FIELD_HEADING_TEXT_LABEL"
+                        description="MOD_CWNEWS_FIELD_HEADING_TEXT_DESC"/>
+
+                <field
+                        name="link_date"
+                        type="radio"
+                        class="btn-group btn-group-yesno"
+                        default="1"
+                        label="MOD_CWNEWS_FIELD_SHOW_LDATE_LABEL"
+                        description="MOD_CWNEWS_FIELD_SHOW_LDATE_DESC">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+
+            </fieldset>
+
+            <fieldset
+                    name="LAYOUT"
+                    label="MOD_CWNEWS_TAB_LAYOUT">
+
+                <field
+                        type="spacer"
+                        name="general_layout_spacer"
+                        label="MOD_CWNEWS_SPACER_GENERAL"
+                        class="cw_label"/>
+
+                <field
+                        name="layout"
+                        type="pro"
+                        label="MOD_CWNEWS_FIELD_LAYOUT_LABEL"
+                        description="MOD_CWNEWS_FIELD_LAYOUT_DESC"/>
+
+                <field
+                        name="panel_style"
+                        type="pro"
+                        label="MOD_CWNEWS_FIELD_PANEL_STYLE_LABEL"
+                        description="MOD_CWNEWS_FIELD_PANEL_STYLE_DESC"/>
+
+                <field
+                        name="grid_margins_outer"
+                        type="list"
+                        default="20"
+                        label="MOD_CWNEWS_FIELD_MARGINS_OUTER_LABEL"
+                        description="MOD_CWNEWS_FIELD_MARGINS_OUTER_DESC">
+                    <option value="5">J5</option>
+                    <option value="10">J10</option>
+                    <option value="15">J15</option>
+                    <option value="20">J20</option>
+                    <option value="25">J25</option>
+                    <option value="30">J30</option>
+                </field>
+
+                <field
+                        name="grid_margins_inner"
+                        type="list"
+                        default="medium"
+                        label="MOD_CWNEWS_FIELD_MARGINS_INNER_LABEL"
+                        description="MOD_CWNEWS_FIELD_MARGINS_INNER_DESC">
+                    <option value="small">MOD_CWNEWS_FIELD_MARGINS_OPT1</option>
+                    <option value="medium">MOD_CWNEWS_FIELD_MARGINS_OPT2</option>
+                    <option value="large">MOD_CWNEWS_FIELD_MARGINS_OPT3</option>
+                </field>
+
+                <field
+                        type="spacer"
+                        name="filter_layout_spacer"
+                        label="MOD_CWNEWS_SPACER_FILTER"
+                        class="cw_label"/>
+
+                <field
+                        name="dynamic_filter"
+                        type="pro"
+                        label="MOD_CWNEWS_FIELD_DYNAMIC_FILTER_LABEL"
+                        description="MOD_CWNEWS_FIELD_DYNAMIC_FILTER_LABEL"/>
+
+                <field
+                        name="filter_month_by"
+                        type="pro"
+                        label="MOD_CWNEWS_FIELD_EXCLUDE_DATE_BY_LABEL"
+                        description="MOD_CWNEWS_FIELD_EXCLUDE_DATE_BY_DESC"/>
+
+                <field
+                        type="spacer"
+                        name="align_spacer"
+                        label="MOD_CWNEWS_SPACER_ALIGN"
+                        class="cw_label"/>
+
+                <field
+                        name="title_align"
+                        type="list"
+                        default="left"
+                        label="MOD_CWNEWS_FIELD_TITLE_ALIGN_LABEL"
+                        description="MOD_CWNEWS_FIELD_TITLE_ALIGN_DESC">
+                    <option value="left">MOD_CWNEWS_FIELD_ALIGN_OPT1</option>
+                    <option value="right">MOD_CWNEWS_FIELD_ALIGN_OPT2</option>
+                    <option value="center">MOD_CWNEWS_FIELD_ALIGN_OPT3</option>
+                </field>
+
+                <field
+                        name="details_align"
+                        type="list"
+                        default="left"
+                        label="MOD_CWNEWS_FIELD_DETAILS_ALIGN_LABEL"
+                        description="MOD_CWNEWS_FIELD_DETAILS_ALIGN_DESC">
+                    <option value="left">MOD_CWNEWS_FIELD_ALIGN_OPT1</option>
+                    <option value="right">MOD_CWNEWS_FIELD_ALIGN_OPT2</option>
+                    <option value="center">MOD_CWNEWS_FIELD_ALIGN_OPT3</option>
+                </field>
+
+                <field
+                        name="text_align"
+                        type="list"
+                        default="left"
+                        label="MOD_CWNEWS_FIELD_TEXT_ALIGN_LABEL"
+                        description="MOD_CWNEWS_FIELD_TEXT_ALIGN_DESC">
+                    <option value="left">MOD_CWNEWS_FIELD_ALIGN_OPT1</option>
+                    <option value="right">MOD_CWNEWS_FIELD_ALIGN_OPT2</option>
+                    <option value="center">MOD_CWNEWS_FIELD_ALIGN_OPT3</option>
+                    <option value="justify">MOD_CWNEWS_FIELD_ALIGN_OPT4</option>
+                </field>
+
+                <field
+                        name="readmore_align"
+                        type="list"
+                        default="right"
+                        label="MOD_CWNEWS_FIELD_READMORE_ALIGN_LABEL"
+                        description="MOD_CWNEWS_FIELD_READMORE_ALIGN_DESC">
+                    <option value="left">MOD_CWNEWS_FIELD_ALIGN_OPT1</option>
+                    <option value="right">MOD_CWNEWS_FIELD_ALIGN_OPT2</option>
+                    <option value="center">MOD_CWNEWS_FIELD_ALIGN_OPT3</option>
+                </field>
+
+                <field
+                        type="spacer"
+                        name="columns_spacer"
+                        label="MOD_CWNEWS_SPACER_COLUMNS"
+                        class="cw_label"/>
+
+                <field
+                        name="width_info"
+                        type="note"
+                        class="alert alert-info"
+                        close="true"
+                        label="MOD_CWNEWS_TITLE_WIDTH"
+                        description="MOD_CWNEWS_MSG_WIDTH"/>
+
+                <field
+                        name="match_height"
+                        type="pro"
+                        label="MOD_CWNEWS_FIELD_MATCH_HEIGHT_LABEL"
+                        description="MOD_CWNEWS_FIELD_MATCH_HEIGHT_LABEL">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+
+                <field
+                        name="columns_large"
+                        type="text"
+                        default="3"
+                        label="MOD_CWNEWS_FIELD_COLUMNS_LARGE_LABEL"
+                        description="MOD_CWNEWS_FIELD_COLUMNS_LARGE_DESC"/>
+
+                <field
+                        name="columns_medium"
+                        type="text"
+                        default="2"
+                        label="MOD_CWNEWS_FIELD_COLUMNS_MEDIUM_LABEL"
+                        description="MOD_CWNEWS_FIELD_COLUMNS_MEDIUM_DESC"/>
+
+                <field
+                        name="columns_small"
+                        type="text"
+                        default="1"
+                        label="MOD_CWNEWS_FIELD_COLUMNS_SMALL_LABEL"
+                        description="MOD_CWNEWS_FIELD_COLUMNS_SMALL_DESC"/>
+
+            </fieldset>
+
+            <fieldset
+                    name="IMAGES"
+                    label="MOD_CWNEWS_TAB_IMAGES">
+
+                <field
+                        name="affect_info"
+                        type="note"
+                        class="alert alert-info"
+                        close="true"
+                        description="MOD_CWNEWS_MSG_AFFECT"/>
+
+                <field
+                        type="spacer"
+                        name="general_img_spacer"
+                        label="MOD_CWNEWS_SPACER_GENERAL"
+                        class="cw_label"/>
+
+                <field
+                        name="show_image"
+                        type="radio"
+                        class="btn-group btn-group-yesno"
+                        default="1"
+                        label="MOD_CWNEWS_FIELD_SHOW_IMAGE_LABEL"
+                        description="MOD_CWNEWS_FIELD_SHOW_IMAGE_DESC">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+
+                <field
+                        name="onclick_info_img"
+                        type="note"
+                        class="alert alert-danger"
+                        close="true"
+                        label="MOD_CWNEWS_FIELD_INFO_PRO_OPTIONS"
+                        description="MOD_CWNEWS_FIELD_IMAGE_ONCLICK_INFO_CORE"/>
+
+                <field
+                        name="onclick_images"
+                        type="list"
+                        default="1"
+                        label="MOD_CWNEWS_FIELD_IMAGE_ONCLICK_LABEL"
+                        description="MOD_CWNEWS_FIELD_IMAGE_ONCLICK_DESC">
+                    <option value="default">MOD_CWNEWS_FIELD_IMAGE_ONCLICK_OPT1</option>
+                    <option value="link">MOD_CWNEWS_FIELD_IMAGE_ONCLICK_OPT2</option>
+                </field>
+
+                <field
+                        name="type_info_img"
+                        type="note"
+                        class="alert alert-danger"
+                        close="true"
+                        label="MOD_CWNEWS_FIELD_INFO_PRO_OPTIONS"
+                        description="MOD_CWNEWS_FIELD_IMAGE_TYPE_INFO_CORE"/>
+
+                <field
+                        name="image_type"
+                        type="list"
+                        default="image_intro"
+                        label="MOD_CWNEWS_FIELD_IMAGE_TYPE_LABEL"
+                        description="MOD_CWNEWS_FIELD_IMAGE_TYPE_DESC">
+                    <option value="image_intro">MOD_CWNEWS_FIELD_IMAGE_TYPE_OPT1</option>
+                    <option value="image_fulltext">MOD_CWNEWS_FIELD_IMAGE_TYPE_OPT2</option>
+                </field>
+
+                <field
+                        name="show_image_caption"
+                        type="radio"
+                        class="btn-group btn-group-yesno"
+                        default="0"
+                        label="MOD_CWNEWS_FIELD_IMAGE_CAP_LABEL"
+                        description="MOD_CWNEWS_FIELD_IMAGE_CAP_DESC">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+
+                <field
+                        type="spacer"
+                        name="widths_img_spacer"
+                        label="MOD_CWNEWS_SPACER_Widths"
+                        class="cw_label"/>
+
+                <field
+                        name="width_info_img"
+                        type="note"
+                        class="alert alert-info"
+                        close="true"
+                        label="MOD_CWNEWS_TITLE_WIDTH"
+                        description="MOD_CWNEWS_MSG_WIDTH"/>
+
+                <field
+                        name="image_width_large"
+                        type="list"
+                        default="10"
+                        label="MOD_CWNEWS_FIELD_WIDTH_LARGE_LABEL"
+                        description="MOD_CWNEWS_FIELD_WIDTH_LARGE_DESC">
+                    <option value="10">100%</option>
+                    <option value="9">90%</option>
+                    <option value="8">80%</option>
+                    <option value="7">70%</option>
+                    <option value="6">60%</option>
+                    <option value="5">50%</option>
+                    <option value="4">40%</option>
+                    <option value="3">30%</option>
+                    <option value="2">20%</option>
+                    <option value="1">10%</option>
+                </field>
+
+                <field
+                        name="image_width_medium"
+                        type="list"
+                        default="10"
+                        label="MOD_CWNEWS_FIELD_WIDTH_MEDIUM_LABEL"
+                        description="MOD_CWNEWS_FIELD_WIDTH_MEDIUM_DESC">
+                    <option value="10">100%</option>
+                    <option value="9">90%</option>
+                    <option value="8">80%</option>
+                    <option value="7">70%</option>
+                    <option value="6">60%</option>
+                    <option value="5">50%</option>
+                    <option value="4">40%</option>
+                    <option value="3">30%</option>
+                    <option value="2">20%</option>
+                    <option value="1">10%</option>
+                </field>
+
+                <field
+                        name="image_width_small"
+                        type="list"
+                        default="10"
+                        label="MOD_CWNEWS_FIELD_WIDTH_SMALL_LABEL"
+                        description="MOD_CWNEWS_FIELD_WIDTH_SMALL_DESC">
+                    <option value="10">100%</option>
+                    <option value="9">90%</option>
+                    <option value="8">80%</option>
+                    <option value="7">70%</option>
+                    <option value="6">60%</option>
+                    <option value="5">50%</option>
+                    <option value="4">40%</option>
+                    <option value="3">30%</option>
+                    <option value="2">20%</option>
+                    <option value="1">10%</option>
+                </field>
+
+                <field
+                        type="spacer"
+                        name="align_img_spacer"
+                        label="MOD_CWNEWS_SPACER_ALIGN"
+                        class="cw_label"/>
+
+                <field
+                        name="img_align_info"
+                        type="note"
+                        class="alert alert-info"
+                        close="true"
+                        description="MOD_CWNEWS_MSG_IMG_ALIGN"/>
+
+                <field
+                        name="image_align"
+                        type="list"
+                        default="center"
+                        label="MOD_CWNEWS_FIELD_IMAGE_ALIGN_LABEL"
+                        description="MOD_CWNEWS_FIELD_IMAGE_ALIGN_DESC">
+                    <option value="left">MOD_CWNEWS_FIELD_ALIGN_OPT1</option>
+                    <option value="right">MOD_CWNEWS_FIELD_ALIGN_OPT2</option>
+                    <option value="center">MOD_CWNEWS_FIELD_ALIGN_OPT3</option>
+                </field>
+
+            </fieldset>
+
+            <fieldset
+                    name="INFO"
+                    label="MOD_CWNEWS_TAB_INFO">
+
+                <field
+                        name="show_article_info"
+                        type="radio"
+                        class="btn-group btn-group-yesno"
+                        default="1"
+                        label="MOD_CWNEWS_FIELD_SHOW_DETAILS_LABEL"
+                        description="MOD_CWNEWS_FIELD_SHOW_DETAILS_DESC">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+
+                <field
+                        name="show_info_title"
+                        class="btn-group btn-group-yesno"
+                        type="radio"
+                        default="0"
+                        label="MOD_CWNEWS_FIELD_SHOW_HEADING_LABEL"
+                        description="MOD_CWNEWS_FIELD_SHOW_HEADING_DESC">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+
+                <field
+                        name="show_author"
+                        type="radio"
+                        class="btn-group btn-group-yesno"
+                        default="0"
+                        label="MOD_CWNEWS_FIELD_SHOW_AUTHOR_LABEL"
+                        description="MOD_CWNEWS_FIELD_SHOW_AUTHOR_DESC">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+
+                <field
+                        name="show_category"
+                        type="radio"
+                        class="btn-group btn-group-yesno"
+                        default="0"
+                        label="MOD_CWNEWS_FIELD_SHOW_CATEGORY_LABEL"
+                        description="MOD_CWNEWS_FIELD_SHOW_CATEGORY_DESC">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+
+                <field
+                        name="show_hits"
+                        type="radio"
+                        class="btn-group btn-group-yesno"
+                        default="0"
+                        label="MOD_CWNEWS_FIELD_SHOW_HITS_LABEL"
+                        description="MOD_CWNEWS_FIELD_SHOW_HITS_DESC">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+
+                <field
+                        name="show_create_date"
+                        type="radio"
+                        class="btn-group btn-group-yesno"
+                        default="1"
+                        label="MOD_CWNEWS_FIELD_SHOW_CDATE_LABEL"
+                        description="MOD_CWNEWS_FIELD_SHOW_CDATE_DESC">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+
+                <field
+                        name="show_modify_date"
+                        type="radio"
+                        class="btn-group btn-group-yesno"
+                        default="0"
+                        label="MOD_CWNEWS_FIELD_SHOW_MDATE_LABEL"
+                        description="MOD_CWNEWS_FIELD_SHOW_MDATE_DESC">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+
+                <field
+                        name="show_publish_date"
+                        type="radio"
+                        class="btn-group btn-group-yesno"
+                        default="0"
+                        label="MOD_CWNEWS_FIELD_SHOW_PDATE_LABEL"
+                        description="MOD_CWNEWS_FIELD_SHOW_PDATE_DESC">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+
+            </fieldset>
+
+            <fieldset
+                    name="advanced">
+
+                <field
+                        name="dependency_spacer"
+                        type="spacer"
+                        label="MOD_CWNEWS_SPACER_DEPENDENCY"
+                        class="cw_label"/>
+
+                <field
+                        name="dependency_info"
+                        type="note"
+                        class="alert alert-info"
+                        close="true"
+                        description="MOD_CWNEWS_DEPENDENCY_MSG"/>
+
+                <field
+                        name="dependent_gears"
+                        type="dependent"
+                        label="MOD_CWNEWS"
+                        description="plg_system_cwgears"/>
+
+                <field
+                        name="debug_spacer"
+                        type="spacer"
+                        label="MOD_CWNEWS_SPACER_DEBUG"
+                        class="cw_label"/>
+
+                <field
+                        name="debug_info"
+                        type="note"
+                        class="alert alert-info"
+                        close="true"
+                        description="MOD_CWNEWS_MSG_DEBUG"/>
+
+                <field
+                        name="debug"
+                        class="btn-group btn-group-yesno"
+                        type="radio"
+                        default="0"
+                        label="MOD_CWNEWS_FIELD_DEBUG_LABEL"
+                        description="MOD_CWNEWS_FIELD_DEBUG_DESC">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+
+                <field
+                        name="advanced_spacer"
+                        type="spacer"
+                        label="MOD_CWNEWS_SPACER_ADVANCED"
+                        class="cw_label"/>
+
+                <field
+                        name="uikit_prefix"
+                        type="list"
+                        default="cw"
+                        label="MOD_CWNEWS_UIKIT_PREFIX_LABEL"
+                        description="MOD_CWNEWS_UIKIT_PREFIX_DESC">
+                    <option value="cw">CW</option>
+                    <option value="uk">UK</option>
+                </field>
+
+                <field
+                        name="html_strip_info"
+                        type="note"
+                        class="alert alert-info"
+                        close="true"
+                        showon="strip_html:0"
+                        description="MOD_CWNEWS_STRIP_HTML_MSG"/>
+
+                <field
+                        name="strip_html"
+                        type="radio"
+                        class="btn-group btn-group-yesno"
+                        default="1"
+                        label="MOD_CWNEWS_FIELD_STRIP_HTML_LABEL"
+                        description="MOD_CWNEWS_FIELD_STRIP_HTML_DESC">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+
+                <field
+                        name="html_exclusions_info"
+                        type="note"
+                        class="alert alert-danger"
+                        close="true"
+                        showon="strip_html:1"
+                        label="MOD_CWNEWS_FIELD_INFO_PRO_OPTIONS"
+                        description="MOD_CWNEWS_HTML_EXCLUSIONS_MSG"/>
+
+                <field
+                        name="html_exclusions"
+                        type="pro"
+                        showon="strip_html:1"
+                        label="MOD_CWNEWS_FIELD_HTML_EXCLUSIONS_LABEL"
+                        description="MOD_CWNEWS_FIELD_HTML_EXCLUSIONS_DESC"/>
+
+                <field
+                        name="moduleclass_sfx"
+                        type="text"
+                        label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+                        description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC"/>
+
+                <field
+                        name="cache"
+                        type="list"
+                        default="0"
+                        label="COM_MODULES_FIELD_CACHING_LABEL"
+                        description="COM_MODULES_FIELD_CACHING_DESC">
+                    <option value="1">JGLOBAL_USE_GLOBAL</option>
+                    <option value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+                </field>
+
+                <field
+                        name="cache_time"
+                        type="text"
+                        default="900"
+                        label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
+                        description="COM_MODULES_FIELD_CACHE_TIME_DESC"/>
+
+                <field
+                        name="cachemode"
+                        type="hidden"
+                        default="itemid">
+                    <option value="itemid"></option>
+                </field>
+
+            </fieldset>
+
+            <fieldset
+                    name="VERSION"
+                    label="MOD_CWNEWS_TITLE_VERSION">
+
+                <field
+                        name="go_pro"
+                        type="note"
+                        class="alert alert-danger"
+                        close="true"
+                        label="MOD_CWNEWS_TITLE_UPGRADE"
+                        description="MOD_CWNEWS_MSG_UPGRADE"/>
+
+                <field
+                        name="version_info"
+                        type="versioncheck"
+                        label="mod_coalawebnews"/>
+
+            </fieldset>
+
+        </fields>
+    </config>
+</extension>
